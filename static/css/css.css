@@ -403,8 +403,8 @@
 /* 浮動按鈕樣式 */
 .floating-button {
   position: fixed;
-  bottom: 75px; /* 距離底部的距離 */
-  right: 20px; /* 距離右側的距離 */
+  bottom: 85px; /* 距離底部的距離 */
+  right: 30px; /* 距離右側的距離 */
   z-index: 18;
 }
 
