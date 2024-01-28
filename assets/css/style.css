@@ -303,7 +303,7 @@ input{
 .form-control {
   font-size: inherit;
   font-weight: inherit;
-  line-height: 1.5;
+  line-height: 1;
   color: var(--black-color);
   background: none;
   border: none;
