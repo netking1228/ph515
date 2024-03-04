@@ -1,0 +1,309 @@
+@charset "UTF-8";
+/* youtuber等
+   Add this css for responsive embedded videos in your .css file. */
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 購物車振動
+--------------------------------------------------------------*/
+.shake {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: shake 2s;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(20px, 0px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-20px, 0px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(20px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(-20px, 0px) rotate(0deg);
+  }
+  40% {
+    transform: translate(20px, 0px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-20px, 0px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(20px, 0px) rotate(0deg);
+  }
+  70% {
+    transform: translate(-10px, 0px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(10px, 0px) rotate(1deg);
+  }
+  90% {
+    transform: translate(-5px, 0px) rotate(0deg);
+  }
+  100% {
+    transform: translate(3px, 0px) rotate(-1deg);
+  }
+}
+/* Cart的Table
+-------------------------------------------------- */
+div.simpleCart_items table {
+  width: 100%;
+  margin-bottom: 20px;
+  line-height: 3;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+div.simpleCart_items table {
+  /*
+  Max width before this PARTICULAR table gets nasty
+  This query will take effect for any screen smaller than 760px
+  and also iPads specifically.
+  */
+}
+div.simpleCart_items table tbody {
+  border-bottom: 1px solid #ddd;
+}
+div.simpleCart_items table th {
+  text-align: left;
+}
+div.simpleCart_items table td {
+  padding: 0px 0;
+  border-top: 1px solid #ddd;
+}
+div.simpleCart_items table th {
+  font-weight: 400;
+}
+div.simpleCart_items table .item-quantity {
+  text-align: center;
+}
+@media (min-width: 776px) {
+  div.simpleCart_items table .item-session {
+    text-align: center;
+  }
+}
+@media (max-width: 775px) {
+  div.simpleCart_items table {
+    /* // @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) { */
+    /* Force table to not be like tables */
+    /* Hide table headers (but not display: none;, for accessibility) */
+    /* // 放在同一個row */
+    /* //讓左邊從td的50px減少 */
+    /* // 不出現以下 */
+    /*
+    Label the data
+    */
+  }
+  div.simpleCart_items table table,
+  div.simpleCart_items table tbody,
+  div.simpleCart_items table td,
+  div.simpleCart_items table th,
+  div.simpleCart_items table thead,
+  div.simpleCart_items table tr {
+    display: block;
+    line-height: 1.5;
+  }
+  div.simpleCart_items table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  div.simpleCart_items table tr {
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+  }
+  div.simpleCart_items table tbody {
+    border-bottom: 0px;
+  }
+  div.simpleCart_items table td {
+    /* Behave  like a "row" */
+    position: relative;
+    padding-left: 50px;
+    border: 0;
+    border-bottom: 0px solid #eee;
+  }
+  div.simpleCart_items table td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 0px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+  div.simpleCart_items table .item-quantity {
+    text-align: left;
+  }
+  div.simpleCart_items table .item-total,
+  div.simpleCart_items table .item-remove {
+    display: inline-block;
+  }
+  div.simpleCart_items table .item-quantity,
+  div.simpleCart_items table .item-increment {
+    padding-left: 20px;
+  }
+  div.simpleCart_items table .item-remove {
+    float: right;
+    margin-right: 10px;
+  }
+  div.simpleCart_items table td.item-price {
+    display: none;
+  }
+  div.simpleCart_items table td:nth-of-type(1):before {
+    content: "房間:";
+  }
+  div.simpleCart_items table td:nth-of-type(2):before {
+    content: "入住:";
+  }
+  div.simpleCart_items table td:nth-of-type(3):before {
+    content: "退房:";
+  }
+  div.simpleCart_items table td:nth-of-type(4):before {
+    content: "小計:";
+  }
+  div.simpleCart_items table td:nth-of-type(5):before {
+    content: "刪除:";
+  }
+}
+
+/* 定義為1:1的圖片 */
+.sc {
+  max-width: 100%;
+  height: 0;
+  padding-bottom: 95%; /* 1:1 寬高比 */
+  position: relative;
+  overflow: hidden;
+}
+
+.s-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover; /* 保持圖像比例並填滿容器 */
+}
+
+/*圖放大*/
+.ps:hover .cs {
+  transform: scale(1.2);
+  transition: all 0.5s;
+}
+
+/*navbar的占位符*/
+/* 对于 md 及以上屏幕尺寸 */
+@media (min-width: 768px) {
+  .placeh {
+    height: 66.52px;
+  }
+}
+/* 对于 md 以下屏幕尺寸 */
+@media (max-width: 767.98px) {
+  .placeh {
+    height: 59.69px;
+  }
+}
+/*圓角*/
+.imgq {
+  border-radius: 10px;
+}
+
+/*陰影浮起*/
+.fu:hover {
+  box-shadow: 0 18px 32px -18px #000;
+  transform: translateY(-6px);
+}
+
+/* 限制簡介為一行並隱藏多餘的內容 */
+.post-excerpt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 限制顯示的行數 */
+  -webkit-box-orient: vertical;
+}
+
+.post-excerpt1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6; /* 限制顯示的行數 */
+  -webkit-box-orient: vertical;
+}
+
+/*改變超聯結*/
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}
+
+/*改變navbar的高度*/
+.navbar {
+  padding-bottom: 0rem;
+  padding-top: 0rem;
+}
+
+.navbar-brand {
+  padding-top: 0rem;
+}
+
+.floating-button {
+  position: fixed;
+  bottom: 75px; /* 距離底部的距離 */
+  right: 20px; /* 距離右側的距離 */
+  z-index: 18;
+}
+
+/*bg圖*/
+.image-container {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background-image: url("/assets/images/bg-0.jpg");
+  background-size: 100% 100%;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 767.98px) {
+  .image-container {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    background-image: url("/assets/images/bg-0.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+}
+.text-overlay {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+}
+
+/*# sourceMappingURL=styles.css.map */
