@@ -3682,36 +3682,51 @@ SUP體驗，浮潛體驗</small>
 </main>
 
 <script>
-    
+// 获取选择框和内容区域
+const selectOption = document.getElementById('selectOption');
+const contentOptions = {};
 
-    // 获取选择框和内容区域
-    const selectOption = document.getElementById('selectOption');
-    const contentOptions = {};
+// 将内容区域存入对象
+for (let i = 1; i <= 8; i++) {
+    contentOptions[`option${i}`] = document.getElementById(`contentOption${i}`);
+}
 
-    // 将内容区域存入对象
-   for (let i = 1; i <= 8; i++) {
-        contentOptions[`option${i}`] = document.getElementById(`contentOption${i}`);
-   }
+// 解析 URL 中的查询参数
+const urlParams = new URLSearchParams(window.location.search);
+const selectedOption = urlParams.get('option');
 
-    // 监听选择框的变化
-    selectOption.addEventListener('change', function () {
-        // 隐藏所有内容区域
-        for (const key in contentOptions) {
-            contentOptions[key].style.display = 'none';
-        }
+// 如果 URL 中存在选项参数，则设置相应的选项
+if (selectedOption && contentOptions[selectedOption]) {
+    // 隐藏所有内容区域
+    for (const key in contentOptions) {
+        contentOptions[key].style.display = 'none';
+    }
+    // 显示相应选项的内容
+    contentOptions[selectedOption].style.display = 'block';
+    // 设置选择框的值
+    selectOption.value = selectedOption;
+}
 
-        // 根据选择的值显示对应的内容
-        const selectedOption = selectOption.value;
-        if (contentOptions[selectedOption]) {
-            contentOptions[selectedOption].style.display = 'block';
-        }
+// 监听选择框的变化
+selectOption.addEventListener('change', function () {
+    // 隐藏所有内容区域
+    for (const key in contentOptions) {
+        contentOptions[key].style.display = 'none';
+    }
 
-         // 回到页面顶部
-        window.scrollTo(0, 0);
+    // 根据选择的值显示对应的内容
+    const selectedOption = selectOption.value;
+    if (contentOptions[selectedOption]) {
+        contentOptions[selectedOption].style.display = 'block';
+    }
 
-        // const targetElement = document.getElementById('start1');
-        // targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
+    // 更新 URL 中的查询参数
+    history.pushState({}, '', `?option=${selectedOption}`);
+
+    // 回到页面顶部
+    window.scrollTo(0, 0);
+});
+
 
 </script>
 
