@@ -1003,24 +1003,28 @@
 
                       // 根據特殊日期調整價格
                       if (isSpecialReservationDate) {
-                        basePrice += 250;
+                        if (currentPage.indexOf('boat-1.html') > -1 ) { basePrice += 175;}
+                          else { basePrice += 275; }
                       }
                       if (isSpecialReturnDate) {
-                        basePrice += 250;
+                        if (currentPage.indexOf('boat-1.html') > -1 ) { basePrice += 175;}
+                          else { basePrice += 275; }
                       }
 
                       // 若不在特殊日期内，再检查是否在星期五、星期六、星期日或星期一
                       if (!isSpecialReservationDate) {
                         var reservationDay = reservationDate.getDay();
                         if (reservationDay === 5 || reservationDay === 6) {
-                          basePrice += 150;
+                          if (currentPage.indexOf('boat-1.html') > -1 ) { basePrice += 50;}
+                          else { basePrice += 150; }
                         }
                       }
 
                       if (!isSpecialReturnDate) {
                         var returnDay = returnDate.getDay();
                         if (returnDay === 0 || returnDay === 1) {
-                          basePrice += 150;
+                          if (currentPage.indexOf('boat-1.html') > -1 ) { basePrice += 50;}
+                          else { basePrice += 150; }
                         }
                       }
 
@@ -1043,23 +1047,6 @@
                   }
                 });
               </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
