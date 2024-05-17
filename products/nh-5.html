@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="">
@@ -14,8 +17,8 @@
     <script async src="/assets/js/cart/main.js"></script>
     <script src="/assets/js/cart/simpleCart.js"></script>
     
-    
-    <link rel="icon" href="/assets/images/favicon.ico" type="image/webp">
+  
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/assets/images/apple-logo.jpg">
    
     
@@ -39,8 +42,68 @@
 
 
 
+
+
+
+
+
+
     
-	
+	<!-- Meta Pixel Code -->
+	<script>
+		!function (f, b, e, v, n, t, s) {
+			if (f.fbq) return; n = f.fbq = function () {
+				n.callMethod ?
+					n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+			};
+			if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+			n.queue = []; t = b.createElement(e); t.async = !0;
+			t.src = v; s = b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t, s)
+		}(window, document, 'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+		fbq('init', '112573768520957');
+		fbq('track', 'PageView');
+	</script>
+	<noscript><img height="1" width="1" style="display:none"
+			src="https://www.facebook.com/tr?id=112573768520957&ev=PageView&noscript=1" /></noscript>
+	<!-- End Meta Pixel Code -->
+
+
+<!-- Google ga4 (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5N0V1R9Q1D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-5N0V1R9Q1D');
+</script>
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11123094616"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11123094616');
+</script>
+
+<!-- Event snippet for 點line conversion page -->
+<script>
+  window.addEventListener('load',function(event){
+      document.querySelectorAll('a[href^="https://line.me"], a[href^="line:"]').forEach(function(e){
+          e.addEventListener('click',function(){
+          gtag('event', 'conversion', {'send_to': 'AW-11123094616/gozCCKe5pZwZENjo87cp'});
+          });
+      });
+  });
+  </script>
+
+
 
 
 
@@ -51,10 +114,6 @@
 <body>
 
   
-
-
-
-
 <!-- Navigation-->
 <header>
   <nav class="navbar  navbar-expand-lg navbar-light bg-white  fixed-top border border-0  ">
@@ -68,102 +127,202 @@
 
       <div class="collapse navbar-collapse order-3 order-lg-2" id="navbar-left">
         <ul class="navbar-nav me-auto">
-           
+          
+          
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="/index.html">首頁</a>
           </li>
           
-            
+
+
+           
+          
+
+
           
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle " href="/" id="" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+              aria-haspopup="true" aria-expanded="false">
               房間介紹
             </a>
+
             <ul class="dropdown-menu" aria-labelledby="">
+              
               
               <li>
                 <a class="dropdown-item" href="/rooms/room1.html">201 豪華 4人房</a>
               </li>
               
+
+              
+
+              
+              
               <li>
                 <a class="dropdown-item" href="/rooms/room2.html">202 精緻 4人房</a>
               </li>
+              
+
+              
+
+              
               
               <li>
                 <a class="dropdown-item" href="/rooms/room3.html">203 豪華 2人房</a>
               </li>
               
+
+              
+
+              
+              
               <li>
                 <a class="dropdown-item" href="/rooms/room4.html">301 豪華 4人房</a>
               </li>
+              
+
+              
+
+              
               
               <li>
                 <a class="dropdown-item" href="/rooms/room5.html">302 精緻 ４人房</a>
               </li>
               
+
+              
+
+              
+              
               <li>
                 <a class="dropdown-item" href="/rooms/room6.html">303 豪華 2人房</a>
               </li>
+              
+
+              
+
+              
               
               <li>
                 <a class="dropdown-item" href="/rooms/room7.html">401 ２人房（露台）</a>
               </li>
               
+
+              
+
+              
+
+
             </ul>
+
           </li>
-            
+           
+          
+
+
           
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle " href="/" id="" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+              aria-haspopup="true" aria-expanded="false">
               旅遊資訊
             </a>
+
             <ul class="dropdown-menu" aria-labelledby="">
+              
               
               <li>
                 <a class="dropdown-item" href="/paginatons/blog1.html">最新消息</a>
               </li>
               
+
+              
+
+              
+              
               <li>
                 <a class="dropdown-item" href="/tours.html">套餐介紹</a>
               </li>
+              
+
+              
+
+              
               
               <li>
                 <a class="dropdown-item" href="/products.html">行程介紹</a>
               </li>
               
+
+              
+
+              
+
+
             </ul>
+
           </li>
-            
+           
+          
+
+
           
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle " href="/" id="" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+              aria-haspopup="true" aria-expanded="false">
               需知說明
             </a>
+
             <ul class="dropdown-menu" aria-labelledby="">
+              
               
               <li>
                 <a class="dropdown-item" href="/note1.html">訂房需知</a>
               </li>
               
+
+              
+
+              
+              
               <li>
                 <a class="dropdown-item" href="/note2.html">住房需知</a>
               </li>
+              
+
+              
+
+              
               
               <li>
                 <a class="dropdown-item" href="/note3.html">取消/延期</a>
               </li>
               
+
+              
+
+              
+
+
             </ul>
+
           </li>
            
+
+
+
+        
+
+
+
+
+
+
         </ul>
+
       </div>
 
       <a class="navbar-brand mx-auto order-1 order-lg-3" href="/index.html"> <img src="/assets/images/logo.webp"
-          alt="logo圖" width="186" height="50"></a>
+          alt="logo圖" width="185" height="50"></a>
 
       <a id="cart-menu" class="nav-link " href="/cart.html" style="color: black;"> <span
           class="fa fa-shopping-cart "></span> (<span class="simpleCart_quantity "></span>)</a>
@@ -177,7 +336,7 @@
             <a class="nav-link" aria-current="page" href="/about.html">關於我們</a>
           </li>
           <li class="nav-item me-3">
-            <a type="button" class="btn btn-dark" href="line://ti/p/@946ttkfp" role="button"><span
+            <a type="button" class="btn btn-dark" href="" role="button"><span
                 class="me-3 fa-regular fa-comments fa-lg fa-bounce"></span>加Line詢問詳情
             </a>
           </li>
@@ -201,6 +360,17 @@
     display: none;
     z-index: 100000;
   }
+
+  @media (max-width: 768px) {
+    #pagetop {
+    bottom: 8%;
+  }
+
+
+  }
+
+
+
 </style>
 
 <script>
@@ -243,165 +413,165 @@
 
 <style>
     
-  /* 圖片按鈕樣式 */
-  .floating-button img {
-    width: 60px; /* 調整圖片寬度 */
-    height: auto; /* 自動計算高度以保持圖片比例 */
-    border: none;
-    border-radius: 50%; /* 設置為圓形圖片 */
-    cursor: pointer;
-  }
-  
-  /* 鼠標懸停時的效果 */
-  .floating-button img:hover {
-    opacity: 0.8; /* 降低圖片不透明度 */
-  }
-  
-  
-  .floating-button {
-      display: none;
-        bottom: 90px;
-        right: 10px;
-  }
-  
-  
-  
-  
-   /* 底部連結*/
-   @media (max-width: 768px) {
-        .navbar-bottom {
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          background-color: rgba(0, 0, 0, 0.75);
-          padding: 0px 0;
-          z-index: 999;
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-        }
-        .navbar-bottom .nav-link img {
-          width: 40px;
-          height: auto;
-        }
-        .navbar-bottom .nav-link span {
-          color: white; /* 調整文字顏色 */
-          font-size: 0.8rem; /* 調整文字大小 */
-          display: block;
-          margin-top: 2px; /* 調整文字與圖標之間的距離 */
-        }
-  
-        .navbar-bottom .nav-link img {
-          width: 25px;
-          height: auto;
-          display: block;
-          margin: 0 auto; /* 圖片置中 */
-        }
-        .navbar-bottom .nav-link svg {
-          width: 25px;
-          height: auto;
-          display: block;
-          margin: 0 auto; /* 圖片置中 */
-        }
-        /* 按鈕按下動態反應 */
-        .navbar-bottom .nav-link:active {
-          background-color: rgba(255, 255, 255, 0.1);
-        }
-         /* Vertical line */
-         .nav-link  .divider75 {
-          width: 1px;
-          height: 50px;
-          background-color: rgba(255, 255, 255, 0.247);
-          position: absolute;
-          top: 10%;
-          right: 75%;
-        }
-        .nav-link  .divider50 {
-          width: 1px;
-          height: 50px;
-          background-color: rgba(255, 255, 255, 0.247);
-          position: absolute;
-          top: 10%;
-          right: 50%;
-        }
-        .nav-link  .divider25 {
-          width: 1px;
-          height: 50px;
-          background-color: rgba(255, 255, 255, 0.247);
-          position: absolute;
-          top: 10%;
-          right: 25%;
-        }
-       
+/* 圖片按鈕樣式 */
+.floating-button img {
+  width: 60px; /* 調整圖片寬度 */
+  height: auto; /* 自動計算高度以保持圖片比例 */
+  border: none;
+  border-radius: 50%; /* 設置為圓形圖片 */
+  cursor: pointer;
+}
+
+/* 鼠標懸停時的效果 */
+.floating-button img:hover {
+  opacity: 0.8; /* 降低圖片不透明度 */
+}
+
+
+.floating-button {
+    display: none;
+      bottom: 90px;
+      right: 10px;
+}
+
+
+
+
+ /* 底部連結*/
+ @media (max-width: 768px) {
+      .navbar-bottom {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.75);
+        padding: 0px 0;
+        z-index: 999;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
       }
-  
-  
-  </style>
-  
-  
-    <script>
-      jQuery(function($) {
-        if ($(window).width() >= 768) {
-        $(window).on('scroll', function() {
-          if ($(window).scrollTop() > 800) {
-            $('#pageline').fadeIn(400);
-            if ($(window).width() >= 768) {
-              $('#lineLink').attr('href', '');
-            }
-          } else {
-            $('#pageline').fadeOut(400);
-            $('#lineLink').attr('href', 'line://ti/p/@946ttkfp');
+      .navbar-bottom .nav-link img {
+        width: 40px;
+        height: auto;
+      }
+      .navbar-bottom .nav-link span {
+        color: white; /* 調整文字顏色 */
+        font-size: 0.8rem; /* 調整文字大小 */
+        display: block;
+        margin-top: 2px; /* 調整文字與圖標之間的距離 */
+      }
+
+      .navbar-bottom .nav-link img {
+        width: 25px;
+        height: auto;
+        display: block;
+        margin: 0 auto; /* 圖片置中 */
+      }
+      .navbar-bottom .nav-link svg {
+        width: 25px;
+        height: auto;
+        display: block;
+        margin: 0 auto; /* 圖片置中 */
+      }
+      /* 按鈕按下動態反應 */
+      .navbar-bottom .nav-link:active {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+       /* Vertical line */
+       .nav-link  .divider75 {
+        width: 1px;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0.247);
+        position: absolute;
+        top: 10%;
+        right: 75%;
+      }
+      .nav-link  .divider50 {
+        width: 1px;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0.247);
+        position: absolute;
+        top: 10%;
+        right: 50%;
+      }
+      .nav-link  .divider25 {
+        width: 1px;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0.247);
+        position: absolute;
+        top: 10%;
+        right: 25%;
+      }
+     
+    }
+
+
+</style>
+
+
+  <script>
+    jQuery(function($) {
+      if ($(window).width() >= 768) {
+      $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 800) {
+          $('#pageline').fadeIn(400);
+          if ($(window).width() >= 768) {
+            $('#lineLink').attr('href', '');
           }
-        });
-      }
+        } else {
+          $('#pageline').fadeOut(400);
+          $('#lineLink').attr('href', 'line://ti/p/@946ttkfp');
+        }
       });
-    </script>
-  
-  
-  
-  
-  
-  <!-- line 連結 -->
-  <div class="floating-button" id="pageline">
-      <a  id="lineLink">
-          <img src="/assets/images/line.png" alt="Button Image">
-      </a>
-  </div>
-  
-  
-  <nav class="navbar-bottom d-md-none">
-    <a class="nav-link " href="/tours.html ">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFFFFF" class="bi bi-airplane-engines" viewBox="0 0 16 16">
-        <path d="M8 0c-.787 0-1.292.592-1.572 1.151A4.35 4.35 0 0 0 6 3v3.691l-2 1V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.191l-1.17.585A1.5 1.5 0 0 0 0 10.618V12a.5.5 0 0 0 .582.493l1.631-.272.313.937a.5.5 0 0 0 .948 0l.405-1.214 2.21-.369.375 2.253-1.318 1.318A.5.5 0 0 0 5.5 16h5a.5.5 0 0 0 .354-.854l-1.318-1.318.375-2.253 2.21.369.405 1.214a.5.5 0 0 0 .948 0l.313-.937 1.63.272A.5.5 0 0 0 16 12v-1.382a1.5 1.5 0 0 0-.83-1.342L14 8.691V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v.191l-2-1V3c0-.568-.14-1.271-.428-1.849C9.292.591 8.787 0 8 0M7 3c0-.432.11-.979.322-1.401C7.542 1.159 7.787 1 8 1s.458.158.678.599C8.889 2.02 9 2.569 9 3v4a.5.5 0 0 0 .276.447l5.448 2.724a.5.5 0 0 1 .276.447v.792l-5.418-.903a.5.5 0 0 0-.575.41l-.5 3a.5.5 0 0 0 .14.437l.646.646H6.707l.647-.646a.5.5 0 0 0 .14-.436l-.5-3a.5.5 0 0 0-.576-.411L1 11.41v-.792a.5.5 0 0 1 .276-.447l5.448-2.724A.5.5 0 0 0 7 7z"/>
-      </svg>
-      <span >套餐介紹</span> 
+    }
+    });
+  </script>
+
+
+
+
+
+<!-- line 連結 -->
+<div class="floating-button" id="pageline">
+    <a  id="lineLink">
+        <img src="/assets/images/line.png" alt="Button Image">
     </a>
-    <a class="nav-link" href="/products.html">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFFFFF" class="bi bi-backpack2" viewBox="0 0 16 16">
-        <path d="M4.04 7.43a4 4 0 0 1 7.92 0 .5.5 0 1 1-.99.14 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.14"/>
-        <path fill-rule="evenodd" d="M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm1 .5v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z"/>
-        <path d="M6 2.341V2a2 2 0 1 1 4 0v.341c2.33.824 4 3.047 4 5.659v1.191l1.17.585a1.5 1.5 0 0 1 .83 1.342V13.5a1.5 1.5 0 0 1-1.5 1.5h-1c-.456.607-1.182 1-2 1h-7a2.5 2.5 0 0 1-2-1h-1A1.5 1.5 0 0 1 0 13.5v-2.382a1.5 1.5 0 0 1 .83-1.342L2 9.191V8a6 6 0 0 1 4-5.659M7 2v.083a6 6 0 0 1 2 0V2a1 1 0 0 0-2 0M3 13.5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5V8A5 5 0 0 0 3 8zm-1-3.19-.724.362a.5.5 0 0 0-.276.447V13.5a.5.5 0 0 0 .5.5H2zm12 0V14h.5a.5.5 0 0 0 .5-.5v-2.382a.5.5 0 0 0-.276-.447L14 10.309Z"/>
-      </svg>
-        <span>行程介紹</span> 
-    </a>
-    <a class="nav-link" href="tel:0937-214165">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFFFFF" class="bi bi-telephone" viewBox="0 0 16 16">
-        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
-      </svg>
-        <span>電話聯系</span> 
-    </a>
-    <a class="nav-link" href="line://ti/p/@946ttkfp">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFFFFF" class="bi bi-line" viewBox="0 0 16 16">
-            <path d="M8 0c4.411 0 8 2.912 8 6.492 0 1.433-.555 2.723-1.715 3.994-1.678 1.932-5.431 4.285-6.285 4.645-.83.35-.734-.197-.696-.413l.003-.018.114-.685c.027-.204.055-.521-.026-.723-.09-.223-.444-.339-.704-.395C2.846 12.39 0 9.701 0 6.492 0 2.912 3.59 0 8 0M5.022 7.686H3.497V4.918a.156.156 0 0 0-.155-.156H2.78a.156.156 0 0 0-.156.156v3.486c0 .041.017.08.044.107v.001l.002.002.002.002a.15.15 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157m.791-2.924a.156.156 0 0 0-.156.156v3.486c0 .086.07.155.156.155h.562c.086 0 .155-.07.155-.155V4.918a.156.156 0 0 0-.155-.156zm3.863 0a.156.156 0 0 0-.156.156v2.07L7.923 4.832l-.013-.015v-.001l-.01-.01-.003-.003-.011-.009h-.001L7.88 4.79l-.003-.002-.005-.003-.008-.005h-.002l-.003-.002-.01-.004-.004-.002-.01-.003h-.002l-.003-.001-.009-.002h-.006l-.003-.001h-.004l-.002-.001h-.574a.156.156 0 0 0-.156.155v3.486c0 .086.07.155.156.155h.56c.087 0 .157-.07.157-.155v-2.07l1.6 2.16a.2.2 0 0 0 .039.038l.001.001.01.006.004.002.008.004.007.003.005.002.01.003h.003a.2.2 0 0 0 .04.006h.56c.087 0 .157-.07.157-.155V4.918a.156.156 0 0 0-.156-.156zm3.815.717v-.56a.156.156 0 0 0-.155-.157h-2.242a.16.16 0 0 0-.108.044h-.001l-.001.002-.002.003a.16.16 0 0 0-.044.107v3.486c0 .041.017.08.044.107l.002.003.002.002a.16.16 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156Z"/>
-          </svg>
-        <span>Line聯系</span> 
-        <div class="divider75"></div>
-        <div class="divider50"></div>
-        <div class="divider25"></div>
-    </a>
-   
-  </nav>
+</div>
+
+
+<nav class="navbar-bottom d-md-none">
+  <a class="nav-link " href="/tours.html ">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#A781BE" class="bi bi-airplane-engines" viewBox="0 0 16 16">
+      <path d="M8 0c-.787 0-1.292.592-1.572 1.151A4.35 4.35 0 0 0 6 3v3.691l-2 1V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.191l-1.17.585A1.5 1.5 0 0 0 0 10.618V12a.5.5 0 0 0 .582.493l1.631-.272.313.937a.5.5 0 0 0 .948 0l.405-1.214 2.21-.369.375 2.253-1.318 1.318A.5.5 0 0 0 5.5 16h5a.5.5 0 0 0 .354-.854l-1.318-1.318.375-2.253 2.21.369.405 1.214a.5.5 0 0 0 .948 0l.313-.937 1.63.272A.5.5 0 0 0 16 12v-1.382a1.5 1.5 0 0 0-.83-1.342L14 8.691V7.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v.191l-2-1V3c0-.568-.14-1.271-.428-1.849C9.292.591 8.787 0 8 0M7 3c0-.432.11-.979.322-1.401C7.542 1.159 7.787 1 8 1s.458.158.678.599C8.889 2.02 9 2.569 9 3v4a.5.5 0 0 0 .276.447l5.448 2.724a.5.5 0 0 1 .276.447v.792l-5.418-.903a.5.5 0 0 0-.575.41l-.5 3a.5.5 0 0 0 .14.437l.646.646H6.707l.647-.646a.5.5 0 0 0 .14-.436l-.5-3a.5.5 0 0 0-.576-.411L1 11.41v-.792a.5.5 0 0 1 .276-.447l5.448-2.724A.5.5 0 0 0 7 7z"/>
+    </svg>
+    <span >套餐介紹</span> 
+  </a>
+  <a class="nav-link" href="/products.html">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#A781BE" class="bi bi-backpack2" viewBox="0 0 16 16">
+      <path d="M4.04 7.43a4 4 0 0 1 7.92 0 .5.5 0 1 1-.99.14 3 3 0 0 0-5.94 0 .5.5 0 1 1-.99-.14"/>
+      <path fill-rule="evenodd" d="M4 9.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm1 .5v3h6v-3h-1v.5a.5.5 0 0 1-1 0V10z"/>
+      <path d="M6 2.341V2a2 2 0 1 1 4 0v.341c2.33.824 4 3.047 4 5.659v1.191l1.17.585a1.5 1.5 0 0 1 .83 1.342V13.5a1.5 1.5 0 0 1-1.5 1.5h-1c-.456.607-1.182 1-2 1h-7a2.5 2.5 0 0 1-2-1h-1A1.5 1.5 0 0 1 0 13.5v-2.382a1.5 1.5 0 0 1 .83-1.342L2 9.191V8a6 6 0 0 1 4-5.659M7 2v.083a6 6 0 0 1 2 0V2a1 1 0 0 0-2 0M3 13.5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5V8A5 5 0 0 0 3 8zm-1-3.19-.724.362a.5.5 0 0 0-.276.447V13.5a.5.5 0 0 0 .5.5H2zm12 0V14h.5a.5.5 0 0 0 .5-.5v-2.382a.5.5 0 0 0-.276-.447L14 10.309Z"/>
+    </svg>
+      <span>行程介紹</span> 
+  </a>
+  <a class="nav-link" href="tel:0937-214165">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#A781BE" class="bi bi-telephone" viewBox="0 0 16 16">
+      <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+    </svg>
+      <span>電話聯系</span> 
+  </a>
+  <a class="nav-link" href="line://ti/p/@946ttkfp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#A781BE" class="bi bi-line" viewBox="0 0 16 16">
+          <path d="M8 0c4.411 0 8 2.912 8 6.492 0 1.433-.555 2.723-1.715 3.994-1.678 1.932-5.431 4.285-6.285 4.645-.83.35-.734-.197-.696-.413l.003-.018.114-.685c.027-.204.055-.521-.026-.723-.09-.223-.444-.339-.704-.395C2.846 12.39 0 9.701 0 6.492 0 2.912 3.59 0 8 0M5.022 7.686H3.497V4.918a.156.156 0 0 0-.155-.156H2.78a.156.156 0 0 0-.156.156v3.486c0 .041.017.08.044.107v.001l.002.002.002.002a.15.15 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157m.791-2.924a.156.156 0 0 0-.156.156v3.486c0 .086.07.155.156.155h.562c.086 0 .155-.07.155-.155V4.918a.156.156 0 0 0-.155-.156zm3.863 0a.156.156 0 0 0-.156.156v2.07L7.923 4.832l-.013-.015v-.001l-.01-.01-.003-.003-.011-.009h-.001L7.88 4.79l-.003-.002-.005-.003-.008-.005h-.002l-.003-.002-.01-.004-.004-.002-.01-.003h-.002l-.003-.001-.009-.002h-.006l-.003-.001h-.004l-.002-.001h-.574a.156.156 0 0 0-.156.155v3.486c0 .086.07.155.156.155h.56c.087 0 .157-.07.157-.155v-2.07l1.6 2.16a.2.2 0 0 0 .039.038l.001.001.01.006.004.002.008.004.007.003.005.002.01.003h.003a.2.2 0 0 0 .04.006h.56c.087 0 .157-.07.157-.155V4.918a.156.156 0 0 0-.156-.156zm3.815.717v-.56a.156.156 0 0 0-.155-.157h-2.242a.16.16 0 0 0-.108.044h-.001l-.001.002-.002.003a.16.16 0 0 0-.044.107v3.486c0 .041.017.08.044.107l.002.003.002.002a.16.16 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156Z"/>
+        </svg>
+      <span>Line聯系</span> 
+      <div class="divider75"></div>
+      <div class="divider50"></div>
+      <div class="divider25"></div>
+  </a>
+ 
+</nav>
 
   <main class="main pt-4">
     <div class="container">
@@ -668,9 +838,145 @@
                 
                 <li>七美島上騎機車環島，走訪知名景點： 雙心石滬、小台灣、望夫石、石獅風景區、龍埕海蝕平台，感受離島的悠閒風情</li>
                  
-                <br>
-                ⭑⭑　本行程介紹為旅遊資訊整理，行程需求將轉介合法旅遊從業人員　⭑⭑
+               
               </ul>
+
+
+               <!-- 加入購物車 -->
+               <hr>
+               <h4 class="fw-bold ">加入購物車</h4>
+               <div class="simpleCart_shelfItem">
+                 <h2 class="item_name">七美一日自由行</h2>
+                 <div class="input-group mb-3">
+                   <label class="input-group-text" aria-label="行程類型">行程類型</label>
+                   <select class="item_type form-select">
+                     
+                     
+                     
+                     <option>
+                       
+                     
+                     
+                     
+                       船票+環島機車(3歲以上)
+ NT$1,100
+
+</option>
+                     
+                     
+                     
+                     
+                     <option>
+                       
+                     
+                     
+                     
+                       船票+環島巴士(3歲以上)
+ NT$1,200
+
+
+</option>
+                     
+                     
+                     
+                     
+                     <option>
+                       
+                     
+                     
+                     
+                       未滿3歲
+ NT$100
+
+</option>
+                     
+                     
+                     
+                     
+                     <option>
+                       
+                     
+                     
+                     
+                       加購透明濁木舟(2人乙艘)
+ NT$800
+
+</option>
+                     
+                     
+                     
+                     
+                     <option>
+                       
+                     
+                     
+                     
+                       七美島上機車為兩人一台，單人騎乘需補價差 
+ NT$100</option>
+                     
+                     
+                   </select>
+                 </div>
+ 
+                 <div class="input-group mb-3">
+                   <label class="input-group-text" aria-label="預訂日期">預訂日期</label>
+                   <input type="date" class="item_date form-control text-start" id="currentDate" />
+                 </div>
+ 
+                 
+                 
+                 <div class="item_session nodisplay">無 </div>
+                 
+                 <div class="input-group mb-3">
+                   <label class="input-group-text" aria-label="選購數量">選購數量</label>
+                   <select type="text" class="item_quantity form-select" value="1">
+                     
+                     <option value='1'>1</option>
+                     
+                     <option value='2'>2</option>
+                     
+                     <option value='3'>3</option>
+                     
+                     <option value='4'>4</option>
+                     
+                     <option value='5'>5</option>
+                     
+                     <option value='6'>6</option>
+                     
+                     <option value='7'>7</option>
+                     
+                     <option value='8'>8</option>
+                     
+                     <option value='9'>9</option>
+                     
+                     <option value='10'>10</option>
+                     
+                     <option value='11'>11</option>
+                     
+                     <option value='12'>12</option>
+                     
+                     <option value='13'>13</option>
+                     
+                     <option value='14'>14</option>
+                     
+                     <option value='15'>15</option>
+                     
+                     <option value='16'>16</option>
+                     
+                     <option value='17'>17</option>
+                     
+                     <option value='18'>18</option>
+                     
+                     <option value='19'>19</option>
+                     
+                     <option value='20'>20</option>
+                     
+                   </select>
+                 </div>
+                 <div class="d-grid gap-2 col-8 col-md-6 mx-auto">
+                   <button type="button" id="item_add" class="item_add btn btn-dark">加入購物車</button>
+                 </div>
+               </div>
 
 
               <!-- 地圖資訊 S-->
@@ -680,7 +986,7 @@
               <iframe src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14628.220341624186!2d119.572509!3d23.566465!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346c5aecf84d97fb%3A0x3687fef7e2484f3c!2z5Y2X5rW36YGK5a6i5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1701842037050!5m2!1szh-TW!2stw' width="100%" style="border:0;" allowfullscreen=""
                 loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="google 地圖"></iframe>
 
-
+                本行程由愛自遊旅行社有限公司提供 &nbsp;&nbsp; 代表人：蔡慶良   &nbsp;&nbsp;  乙種旅行業 &nbsp;&nbsp;  統一編號93690613
 
 
                 
@@ -737,10 +1043,10 @@
                   <a href="/index.html">首頁</a>
                 </li>
                 <li class="menu-item pb-2">
-                  <a href="/about.html">關於我們</a>
+                  <a href="/paginatons/boat.html">船票介紹</a>
                 </li>
                 <li class="menu-item pb-2">
-                  <a href="/news.html">最新消息</a>
+                  <a href="/tours.html">套餐介紹</a>
                 </li>
                 <li class="menu-item pb-2">
                   <a href="/products.html">行程介紹</a>
@@ -769,10 +1075,9 @@
                     netking1228@gmail.com</a>
                 </li>
                 <li class="menu-item pb-2">
-                  民宿編號 : 578號
-                   
+                  民宿編號 : 587號
+                    
                 </li>
-                
               </ul>
             </div>
           </div>
@@ -815,6 +1120,12 @@
 
 
 
+
+<script src="/assets/js/cart/add-to-cart.js"></script>
+
+
+
+<script src="/assets/js/cart/date1.js"></script>
 
 
 

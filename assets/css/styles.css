@@ -94,19 +94,15 @@ div.simpleCart_items table th {
 div.simpleCart_items table .item-quantity {
   text-align: center;
 }
-@media (min-width: 776px) {
+@media (min-width: 991px) {
   div.simpleCart_items table .item-session {
     text-align: center;
   }
 }
-@media (max-width: 775px) {
+@media (max-width: 990px) {
   div.simpleCart_items table {
-    /* // @media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) { */
     /* Force table to not be like tables */
     /* Hide table headers (but not display: none;, for accessibility) */
-    /* // 放在同一個row */
-    /* //讓左邊從td的50px減少 */
-    /* // 不出現以下 */
     /*
     Label the data
     */
@@ -152,7 +148,9 @@ div.simpleCart_items table .item-quantity {
   div.simpleCart_items table .item-quantity {
     text-align: left;
   }
-  div.simpleCart_items table .item-total,
+  div.simpleCart_items table .item-decrement,
+  div.simpleCart_items table .item-quantity,
+  div.simpleCart_items table .item-increment,
   div.simpleCart_items table .item-remove {
     display: inline-block;
   }
@@ -164,26 +162,28 @@ div.simpleCart_items table .item-quantity {
     float: right;
     margin-right: 10px;
   }
+  div.simpleCart_items table td.item-total,
   div.simpleCart_items table td.item-price {
     display: none;
   }
   div.simpleCart_items table td:nth-of-type(1):before {
-    content: "房間:";
+    content: "名稱:";
   }
   div.simpleCart_items table td:nth-of-type(2):before {
-    content: "入住:";
+    content: "類型:";
   }
   div.simpleCart_items table td:nth-of-type(3):before {
-    content: "退房:";
+    content: "日期:";
   }
   div.simpleCart_items table td:nth-of-type(4):before {
-    content: "小計:";
+    content: "場次:";
   }
   div.simpleCart_items table td:nth-of-type(5):before {
-    content: "刪除:";
+    content: "數量:";
   }
 }
 
+/*-------------------------*/
 /* 定義為1:1的圖片 */
 .sc {
   max-width: 100%;
@@ -304,6 +304,10 @@ a:hover {
   color: #fff;
   font-size: 3rem;
   text-align: center;
+}
+
+.nodisplay {
+  display: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
