@@ -43,7 +43,7 @@
 
     
     <meta name="description"
-      content="澎湖優質民宿|IdleFish|閒魚民宿|Previous|Next|包棟優惠中|515|民宿|Previous|Next|包棟優惠中|52|菊島旅店|Previous|Next|包棟優惠中|真心愛你精品民宿|Previous|Next|包棟優惠中|淳夏文旅民宿|Previous|Next|包棟優惠中|享玩樂民宿|Previous|Next|包棟優惠中|樂玩民宿|Previous|Next|包棟優惠中|漫慢民宿|Previous|Next|包棟優惠中|澎緣民宿|Previous|Next|包棟優惠中|澎湖小蘋果民宿|Previous|Next|包棟優惠中|澎湖小蘋果民宿六合館|Previous|Next|包棟優惠中|新海漾情民宿|Previous|Next|包棟優惠中|遛時光民宿|Previous|Next|包棟優惠中|辰廷乙語民宿|Previous|Next|包棟優惠中|小島風情民宿|Previous|Next|包棟優惠中|小蘋果田園館民宿|Previous|Next|包棟優惠中|葛妮思民宿|Previous|Next|包棟優惠中|ㄚ喵民宿|Previous|Next|包棟優惠中|彬彬有禮民宿|Previous|Next|包棟優惠中|梧桐民宿|Previous|Next|包棟優惠中|愛玩樂民宿|Previous|Next|包棟優惠中|麗園民宿|Previous|Next|包棟優惠中|幸運海灣海景民宿|Previous|Next|包棟優惠中|三號船長民宿|Previous|Next|包棟優惠中|心悅民宿|Previous|Next|包棟優惠中|Hi海民宿|Previous|Next|包棟優惠中|東奇民宿|Previous|Next|包棟優惠中|晒日光民宿|Previous|Next|包棟優惠中|好夜1357館民宿|Previous|Next|包棟優惠中|夏日瘋民宿|Previous|Next|包棟優惠中|加Line詢問詳情 ">
+      content="澎湖優質民宿|IdleFish|閒魚民宿|Previous|Next|包棟優惠中|515|民宿|Previous|Next|包棟優惠中|52|菊島旅店|Previous|Next|包棟優惠中|真心愛你精品民宿|Previous|Next|包棟優惠中|淳夏文旅民宿|Previous|Next|包棟優惠中|享玩樂民宿|Previous|Next|包棟優惠中|樂玩民宿|Previous|Next|包棟優惠中|漫慢民宿|Previous|Next|包棟優惠中|澎緣民宿|Previous|Next|包棟優惠中|澎湖小蘋果民宿|Previous|Next|包棟優惠中|澎湖小蘋果民宿六合館|Previous|Next|包棟優惠中|新海漾情民宿|Previous|Next|包棟優惠中|遛時光民宿|Previous|Next|包棟優惠中|辰廷乙語民宿|Previous|Next|包棟優惠中|小島風情民宿|Previous|Next|包棟優惠中|小蘋果田園館民宿|Previous|Next|包棟優惠中|葛妮思民宿|Previous|Next|包棟優惠中|ㄚ喵民宿|Previous|Next|包棟優惠中|彬彬有禮民宿|Previous|Next|包棟優惠中|梧桐民宿|Previous|Next|包棟優惠中|愛玩樂民宿|Previous|Next|包棟優惠中|麗園民宿|Previous|Next|包棟優惠中|幸運海灣海景民宿|Previous|Next|包棟優惠中|三號船長民宿|Previous|Next|包棟優惠中|心悅民宿|Previous|Next|包棟優惠中|Hi海民宿|Previous|Next|包棟優惠中|東奇民宿|Previous|Next|包棟優惠中|晒日光民宿|Previous|Next|包棟優惠中|好夜1357館民宿|Previous|Next|包棟優惠中|夏日瘋民宿|Previous|Next|包棟優惠中|加Line詢問詳情|限定優惠！|立即加入我們的|LINE|帳號，獲取最新優惠！|加入|LINE ">
     <title>包棟旅遊專家</title>
     <meta property="og:title" content="澎湖515會館民宿-包棟旅遊專家">
     <meta property="og:description"
@@ -2628,6 +2628,48 @@
         <a type="button" class="btn btn-dark" href="line://ti/p/@946ttkfp" role="button"><span class="me-3 fa-regular fa-comments fa-lg fa-bounce"></span>加Line詢問詳情
       </a>
       </div>
+
+<p><!-- Modal --></p>
+<div class="modal fade" id="scrollModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="scrollModalLabel">限定優惠！</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <img src="/assets/images/posts/5800bnb/bnb-cover.jpg" class="img-fluid rounded" alt="優惠活動" />
+                <p class="mt-3">立即加入我們的 LINE 帳號，獲取最新優惠！</p>
+                <a href="line://ti/p/@946ttkfp" target="_blank" class="btn btn-success">
+                    <i class="bi bi-line"></i> 加入 LINE
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="sdata" data-ratio="0.5"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        let modalShown = false;
+        let modalElement = document.getElementById("sdata");
+        let ratio = modalElement.dataset.ratio || 0.5; // 確保有預設值
+        window.addEventListener("scroll", function () {
+            let scrollPosition = window.scrollY + window.innerHeight; // 當前滾動位置 + 視窗高度
+            let pageHeight = document.documentElement.scrollHeight; // 總頁面高度
+
+            if (!modalShown && scrollPosition >= pageHeight * ratio) {
+                $('#scrollModal').modal('show');
+                modalShown = true;
+            }
+        });
+
+    });
+
+
+</script>
+
 
 
 

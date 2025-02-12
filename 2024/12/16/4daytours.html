@@ -1171,21 +1171,25 @@
     </div>
 </div>
 
+<div id="sdata" data-ratio="0.6"></div>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        let modalShown = false;
 
+        let modalShown = false;
+        let modalElement = document.getElementById("sdata");
+        let ratio = modalElement.dataset.ratio || 0.5; // 確保有預設值
         window.addEventListener("scroll", function () {
             let scrollPosition = window.scrollY + window.innerHeight; // 當前滾動位置 + 視窗高度
             let pageHeight = document.documentElement.scrollHeight; // 總頁面高度
 
-            if (!modalShown && scrollPosition >= pageHeight - 1500) { // 滾到底部時觸發
-                // 通过模态框的 ID 打开模态框
+            if (!modalShown && scrollPosition >= pageHeight * ratio) {
                 $('#scrollModal').modal('show');
                 modalShown = true;
             }
         });
+
     });
+
 
 </script>
 
