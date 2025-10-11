@@ -687,10 +687,10 @@ const spots = [
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0079293908047!2d119.56445277579805!3d23.56815869574746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346c5af2433e9bdf%3A0xc4e0b586dc6235d9!2z6aaZ5Lqt5Zyf6a2g6a2a5765!5e0!3m2!1szh-TW!2stw!4v1760187975271!5m2!1szh-TW!2stw"
   },
   {
-    title: "益豐豆漿店",
+    title: "益豐豆漿",
     location: "文康街",
     desc: "文康老字號中式早餐，販售豆漿、油條與燒餅。樸實好吃，是許多澎湖人每日的早晨儀式感。",
-    img: "/assets/images/posts/magongbreakfast/益豐豆漿店.jpg",
+    img: "/assets/images/posts/magongbreakfast/益豐豆漿.jpg",
     likes: "4.6分",
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.9949516363376!2d119.56469727579788!3d23.568624795729733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346c5af21586576f%3A0x49a7a7c1cbb69b87!2z55uK6LGQ6LGG5ry_!5e0!3m2!1szh-TW!2stw!4v1760188120388!5m2!1szh-TW!2stw"
   },
@@ -775,108 +775,110 @@ const spots = [
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14628.542480603732!2d119.56612888147491!3d23.563572179833766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346c5b1a039adeab%3A0xd30b13cbfba553e5!2z5pig5YWI54mb6IKJ5rmv!5e0!3m2!1szh-TW!2stw!4v1760192140930!5m2!1szh-TW!2stw"
   },
 ];
+  
+
+
+    // 生成卡片
+    document.addEventListener('DOMContentLoaded', function () {
+        const container = document.getElementById('spotsContainer');
+
+        spots.forEach((spot) => {
+            const cardHtml = `
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <a href="#" class="tlCard text-decoration-none text-dark shadow-sm rounded-4 d-block overflow-hidden h-100"
+                            data-bs-toggle="modal" data-bs-target="#spotModal"
+                            data-title="${spot.title}"
+                            data-desc="${spot.desc}"
+                            data-img="${spot.img}"
+                            data-location="${spot.location}"
+                            data-likes="${spot.likes}"
+                            data-map="${spot.map}">
+                            <div class="tlCardImg position-relative">
+                                <img src="${spot.img}" class="w-100 h-100 object-fit-cover" alt="${spot.title}">
+                            </div>
+                            <div class="tlCardBody p-3 bg-white">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-secondary">${spot.location}</span>
+                                    <span class="text-muted small">
+                                        <img src="/assets/images/posts/north/map.png" alt="地圖" class="me-1"
+                                            style="width: 20px; height: 20px; object-fit: contain;">
+                                        google 地圖
+                                    </span>
+                                </div>
+                                <h5 class="fw-bold mb-2">${spot.title}</h5>
+                                <p class="text-muted small tlCardDesc">${spot.desc}</p>
+                            </div>
+                        </a>
+                    </div>
+                `;
+            container.innerHTML += cardHtml;
+        });
+    });
+
+    // Modal 相關 JavaScript
+    document.addEventListener('touchmove', function (e) {
+        if (e.cancelable) {
+            // 不做 preventDefault，保留自然滾動
+        }
+    }, { passive: true });
+
+    const spotModal = document.getElementById('spotModal');
+    let currentMapUrl = ''; // 儲存當前地圖 URL
+
+    // 🔸 顯示 Modal 時儲存資料
+    spotModal.addEventListener('show.bs.modal', event => {
+        const trigger = event.relatedTarget;
+        document.getElementById('spotTitle').textContent = trigger.getAttribute('data-title');
+        document.getElementById('spotDesc').textContent = trigger.getAttribute('data-desc');
+        document.getElementById('spotImage').src = trigger.getAttribute('data-img');
+        document.getElementById('spotLocation').textContent = trigger.getAttribute('data-location');
+        document.getElementById('spotLikes').textContent = trigger.getAttribute('data-likes');
+
+        // 儲存地圖 URL，但不立即載入
+        currentMapUrl = trigger.getAttribute('data-map');
+    });
+
+    // 🔸 當 Modal 完全顯示後再載入地圖
+    spotModal.addEventListener('shown.bs.modal', () => {
+        document.body.style.overflow = 'hidden';
+
+        // 確保 DOM 完全載入後再設定地圖
+        setTimeout(() => {
+            if (currentMapUrl) {
+                document.getElementById('spotMap').src = currentMapUrl;
+            }
+        }, 100);
+
+        const closeButton = spotModal.querySelector('[data-bs-dismiss="modal"]');
+        if (closeButton) {
+            closeButton.focus();
+        }
+    });
+
+    // 🔸 在 Modal 開始隱藏時移除焦點
+    spotModal.addEventListener('hide.bs.modal', () => {
+        const focusedElement = document.activeElement;
+        if (spotModal.contains(focusedElement)) {
+            focusedElement.blur();
+        }
+    });
+
+    // 🔸 當 Modal 完全隱藏後，確保焦點回到觸發元素
+    spotModal.addEventListener('hidden.bs.modal', (event) => {
+        const trigger = event.relatedTarget;
+        if (trigger && typeof trigger.focus === 'function') {
+            setTimeout(() => {
+                trigger.focus();
+            }, 100);
+        }
+        document.body.style.overflow = '';
+
+        // 清除地圖 URL，避免重複載入
+        document.getElementById('spotMap').src = '';
+        currentMapUrl = '';
+    });
 </script>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 生成卡片
-document.addEventListener('DOMContentLoaded', function () {
-    const container = document.getElementById('spotsContainer');
-
-    spots.forEach((spot) =&gt; {
-        const cardHtml = `
-                &lt;div class="col-lg-4 col-md-6 col-12"&gt;
-                    &lt;a href="#" class="tlCard text-decoration-none text-dark shadow-sm rounded-4 d-block overflow-hidden h-100"
-                        data-bs-toggle="modal" data-bs-target="#spotModal"
-                        data-title="${spot.title}"
-                        data-desc="${spot.desc}"
-                        data-img="${spot.img}"
-                        data-location="${spot.location}"
-                        data-likes="${spot.likes}"
-                        data-map="${spot.map}"&gt;
-                        &lt;div class="tlCardImg position-relative"&gt;
-                            &lt;img src="${spot.img}" class="w-100 h-100 object-fit-cover" alt="${spot.title}"&gt;
-                        &lt;/div&gt;
-                        &lt;div class="tlCardBody p-3 bg-white"&gt;
-                            &lt;div class="d-flex justify-content-between mb-2"&gt;
-                                &lt;span class="badge bg-secondary"&gt;${spot.location}&lt;/span&gt;
-                                &lt;span class="text-muted small"&gt;
-                                    &lt;img src="/assets/images/posts/north/map.png" alt="地圖" class="me-1"
-                                        style="width: 20px; height: 20px; object-fit: contain;"&gt;
-                                    google 地圖
-                                &lt;/span&gt;
-                            &lt;/div&gt;
-                            &lt;h5 class="fw-bold mb-2"&gt;${spot.title}&lt;/h5&gt;
-                            &lt;p class="text-muted small tlCardDesc"&gt;${spot.desc}&lt;/p&gt;
-                        &lt;/div&gt;
-                    &lt;/a&gt;
-                &lt;/div&gt;
-            `;
-        container.innerHTML += cardHtml;
-    });
-});
-
-// Modal 相關 JavaScript
-document.addEventListener('touchmove', function (e) {
-    if (e.cancelable) {
-        // 不做 preventDefault，保留自然滾動
-    }
-}, { passive: true });
-
-const spotModal = document.getElementById('spotModal');
-let currentMapUrl = ''; // 儲存當前地圖 URL
-
-// 🔸 顯示 Modal 時儲存資料
-spotModal.addEventListener('show.bs.modal', event =&gt; {
-    const trigger = event.relatedTarget;
-    document.getElementById('spotTitle').textContent = trigger.getAttribute('data-title');
-    document.getElementById('spotDesc').textContent = trigger.getAttribute('data-desc');
-    document.getElementById('spotImage').src = trigger.getAttribute('data-img');
-    document.getElementById('spotLocation').textContent = trigger.getAttribute('data-location');
-    document.getElementById('spotLikes').textContent = trigger.getAttribute('data-likes');
-
-    // 儲存地圖 URL，但不立即載入
-    currentMapUrl = trigger.getAttribute('data-map');
-});
-
-// 🔸 當 Modal 完全顯示後再載入地圖
-spotModal.addEventListener('shown.bs.modal', () =&gt; {
-    document.body.style.overflow = 'hidden';
-
-    // 確保 DOM 完全載入後再設定地圖
-    setTimeout(() =&gt; {
-        if (currentMapUrl) {
-            document.getElementById('spotMap').src = currentMapUrl;
-        }
-    }, 100);
-
-    const closeButton = spotModal.querySelector('[data-bs-dismiss="modal"]');
-    if (closeButton) {
-        closeButton.focus();
-    }
-});
-
-// 🔸 在 Modal 開始隱藏時移除焦點
-spotModal.addEventListener('hide.bs.modal', () =&gt; {
-    const focusedElement = document.activeElement;
-    if (spotModal.contains(focusedElement)) {
-        focusedElement.blur();
-    }
-});
-
-// 🔸 當 Modal 完全隱藏後，確保焦點回到觸發元素
-spotModal.addEventListener('hidden.bs.modal', (event) =&gt; {
-    const trigger = event.relatedTarget;
-    if (trigger &amp;&amp; typeof trigger.focus === 'function') {
-        setTimeout(() =&gt; {
-            trigger.focus();
-        }, 100);
-    }
-    document.body.style.overflow = '';
-
-    // 清除地圖 URL，避免重複載入
-    document.getElementById('spotMap').src = '';
-    currentMapUrl = '';
-}); &lt;/script&gt;
-</code></pre></div></div>
 
 
 
