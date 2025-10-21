@@ -571,14 +571,18 @@
 
 
         <div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+
       <h1 style="color:#402C8B;">布袋船票</h1>
-      <div class="row g-4 justify-content-center mt-2">
+
+      <div class="row g-4  mt-2">
         
         
         
         <div class="col-lg-4 col-md-6 col-12">
           <a href="/products/boat-2.html"
-            class="tlCard text-decoration-none text-dark shadow-sm rounded-4 d-block overflow-hidden h-100">
+            class="tlCard text-decoration-none text-dark shadow-sm  d-block overflow-hidden h-100">
             <div class="tlCardImg position-relative">
               <img src="https://www.iyou.tw/assets/images/boat-2/boat-2-1.webp"
                 class="w-100 h-100 object-fit-cover" alt="聯合航運-太吉、凱旋、滿天星行程圖">
@@ -586,14 +590,20 @@
             <div class="tlCardBody p-3 bg-white">
               <div class="d-flex justify-content-between align-items-center mb-2">
                 <h5 class="fw-bold p-0 m-0 ">聯合航運-太吉、凱旋、滿天星</h5>
-                <span class="small-badge" >布袋船票</span>
+                <span class="small-badge">布袋船票</span>
               </div>
 
               
-                <h2 class="d-flex justify-content-between  fw-bold">
-                  <span class=" fw-light fs-3 " style="color:#402C8B;">優惠價</span>
-                  <div><span class=" fw-bold f-3" style="color:#402C8B;"><span class="fs-6">NT$ </span>1,500</span>
-                </h2>
+              <h2 class="d-flex justify-content-between  fw-bold">
+                <span class=" fw-light fs-3 " style="color:#402C8B;">優惠價</span>
+                <div>
+                  <span class=" fw-bold f-3" style="color:#402C8B;">
+                    <span class="fs-6">NT$
+                    </span>
+                    1,500
+                  </span>
+                </div>
+              </h2>
             </div>
           </a>
         </div>
@@ -776,7 +786,7 @@
         
         <div class="col-lg-4 col-md-6 col-12">
           <a href="/products/boat-1.html"
-            class="tlCard text-decoration-none text-dark shadow-sm rounded-4 d-block overflow-hidden h-100">
+            class="tlCard text-decoration-none text-dark shadow-sm  d-block overflow-hidden h-100">
             <div class="tlCardImg position-relative">
               <img src="https://www.iyou.tw/assets/images/boat-1/boat-1-1.webp"
                 class="w-100 h-100 object-fit-cover" alt=" 百麗航運-雲豹、藍鵲行程圖">
@@ -784,14 +794,20 @@
             <div class="tlCardBody p-3 bg-white">
               <div class="d-flex justify-content-between align-items-center mb-2">
                 <h5 class="fw-bold p-0 m-0 "> 百麗航運-雲豹、藍鵲</h5>
-                <span class="small-badge" >布袋船票</span>
+                <span class="small-badge">布袋船票</span>
               </div>
 
               
-                <h2 class="d-flex justify-content-between  fw-bold">
-                  <span class=" fw-light fs-3 " style="color:#402C8B;">優惠價</span>
-                  <div><span class=" fw-bold f-3" style="color:#402C8B;"><span class="fs-6">NT$ </span>1,600</span>
-                </h2>
+              <h2 class="d-flex justify-content-between  fw-bold">
+                <span class=" fw-light fs-3 " style="color:#402C8B;">優惠價</span>
+                <div>
+                  <span class=" fw-bold f-3" style="color:#402C8B;">
+                    <span class="fs-6">NT$
+                    </span>
+                    1,600
+                  </span>
+                </div>
+              </h2>
             </div>
           </a>
         </div>
@@ -800,18 +816,26 @@
         
         
       </div>
-
+    </div>
+  </div>
 </div>
 
 
 
 <style>
-
   .tlCard {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 1rem;
+    /* 圓角 */
+    overflow: hidden;
+    /* 裁掉子元素超出圓角的部分 */
+    background-color: white;
+    /* 背景放在 a 上 */
   }
 
-  .tlCard:hover {
+
+
+  .tlCard:active {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
   }
@@ -833,6 +857,12 @@
     /* 如果用 flex 容器 */
     color: white;
     background-color: #A781BC;
+  }
+
+  /* 預防破版 */
+  html,
+  body {
+    overflow-x: hidden;
   }
 </style>
 
