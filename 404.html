@@ -565,6 +565,31 @@
  
 </nav>
 
+<script>
+ 
+  document.addEventListener('DOMContentLoaded', function () {
+  // 找到左右兩個 collapse 區塊
+  const collapses = document.querySelectorAll('.navbar-collapse');
+
+  // 找到所有 collapse 區塊裡的 a 連結
+  const allLinks = document.querySelectorAll('.navbar-collapse a');
+
+  allLinks.forEach(link => {
+    link.addEventListener('click', function () {
+      // 手機版才收起
+      if (window.innerWidth < 992) {
+        // 如果是 dropdown toggle，就不要收起
+        if (!link.classList.contains('dropdown-toggle')) {
+          collapses.forEach(collapse => {
+            collapse.classList.remove('show');
+          });
+        }
+      }
+    });
+  });
+});
+</script>
+
 
 
         <div class="container-fluid  text-center ">
