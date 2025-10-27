@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
-<!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1380957323249292');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1380957323249292&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
 
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -76,8 +59,10 @@
 
 <body>
 
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQQS7ZDK" height="0" width="0"
+  
+<!-- google Tag manage -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL3KZ8L6" height="0" width="0"
     style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
@@ -535,7 +520,7 @@
 <!-- line 連結 -->
 <div class="floating-button" id="pageline">
     <a  id="lineLink">
-        <img src="/assets/images/line.svg" alt="Button Image">
+        <img src="/assets/images/line.png" alt="Button Image">
     </a>
 </div>
 
@@ -573,19 +558,9 @@
  
 </nav>
 
-
+<!-- 改善回上一層 會關掉navi bar -->
 <script>
-  jQuery(function ($) {
-    // 根據設備寬度設定 line 連結
-    var lineHref = $(window).width() >= 768
-      ? 'line://ti/p/@946ttkfp'
-      : 'line://ti/p/@946ttkfp';
-
-    $('.line-btn').attr('href', lineHref);
-  });
-
-  
-
+   
   document.addEventListener('DOMContentLoaded', function () {
   // 找到左右兩個 collapse 區塊
   const collapses = document.querySelectorAll('.navbar-collapse');
@@ -608,6 +583,26 @@
   });
 });
 </script>
+
+<!-- navibar 自動出列表　不用按 功能-->
+<style>
+  /* 只在桌機啟用 hover 展開 */
+  @media (min-width: 992px) {
+
+    /* 第一層 dropdown hover */
+    .navbar .dropdown:hover>.dropdown-menu {
+      display: block;
+      margin-top: 0;
+      /* 修正位移 */
+    }
+
+    /* 禁止點擊 dropdown toggle 展開 */
+  .navbar-nav > li.dropdown > .nav-link {
+    pointer-events: none; /* 禁止點擊 */
+  }
+
+  }
+</style>
 
 
 
@@ -711,6 +706,31 @@
 <script>
   // 馬公市排隊美食資料
 const spots = [
+  {
+    title: "海城上湯鮮魚粥 ",
+    location: "三多路",
+    desc: "海城上湯鮮魚粥以每日新鮮漁獲熬煮，湯頭鮮甜不膩，米粒吸滿海味。簡單卻最澎湖的味道，是在地人也愛吃的暖心魚粥。",
+    img: "/assets/images/posts/magongfood/海城上湯鮮魚粥.jpg",
+    likes: "4.7分",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.758453425712!2d119.56763331145083!3d23.577117178700554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346c5bb3cf5a00f5%3A0x3fdf99030182058c!2z5rW35Z-OIOS4iua5r-murumtmueypSDpo6_purXmk5TvvZzmvo7muZblv4XlkIPvvZzmvo7muZbnvo7po5_vvZzlhavku5npgY7mtbcg5Lq65rCj6aSQ5buzIOWcqOWcsOaOqOiWpiDlsI_ljbfpurXnt5og5rW36a6u57KlIOS6uuawo-Wwj-WQgyDogonnh6Xpo68g5pOU5LuU6bq1IOmurumtmua5r-WwiOizoyDpmrHol4_nvo7po5_nn7PmlpHprZog5rW36a6u6aSQ5buz!5e0!3m2!1szh-TW!2stw!4v1761552799853!5m2!1szh-TW!2stw"
+  },
+　{
+    title: "甲貳石頭火鍋店 ",
+    location: "惠民一路",
+    desc: "澎湖想吃暖心鍋物，很多人會想到甲貳。從湯頭到配料都用心，肉量實在、海鮮新鮮，是在地人也會回訪的好店。",
+    img: "/assets/images/posts/magongfood/甲貳石頭火鍋店.jpg",
+    likes: "4.7分",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0663114552085!2d119.56216881145056!3d23.566061778708228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346c5af33b2cae41%3A0x52f9bfb43bdbfe19!2z55Sy6LKz55-z6aCt54Gr6Y2L5bqX!5e0!3m2!1szh-TW!2stw!4v1761552896546!5m2!1szh-TW!2stw"
+  },
+  {
+    title: "機場老牌牛肉麵 ",
+    location: "民福路",
+    desc: "澎湖老味道代表之一。機場老牌牛肉麵以慢火熬煮湯頭、牛肉入味軟香，搭配帶嚼勁的麵條，每一口都充滿熟悉的家常風味。",
+    img: "/assets/images/posts/magongfood/機場老牌牛肉麵.jpg",
+    likes: "4.7分",
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0531927988686!2d119.56603251145083!3d23.566532978707922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346c5af28258d3fb%3A0xd813033887c1fd0d!2z5qmf5aC06ICB54mM54mb6IKJ6bq1!5e0!3m2!1szh-TW!2stw!4v1761553046887!5m2!1szh-TW!2stw"
+  },
+
   {
     title: "馬路益燒肉飯",
     location: "光明路",

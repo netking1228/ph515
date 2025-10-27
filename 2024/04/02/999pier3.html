@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
-<!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1380957323249292');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1380957323249292&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
 
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -78,8 +61,10 @@
 
 <body>
 
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQQS7ZDK" height="0" width="0"
+  
+<!-- google Tag manage -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL3KZ8L6" height="0" width="0"
     style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
@@ -537,7 +522,7 @@
 <!-- line 連結 -->
 <div class="floating-button" id="pageline">
     <a  id="lineLink">
-        <img src="/assets/images/line.svg" alt="Button Image">
+        <img src="/assets/images/line.png" alt="Button Image">
     </a>
 </div>
 
@@ -575,19 +560,9 @@
  
 </nav>
 
-
+<!-- 改善回上一層 會關掉navi bar -->
 <script>
-  jQuery(function ($) {
-    // 根據設備寬度設定 line 連結
-    var lineHref = $(window).width() >= 768
-      ? 'line://ti/p/@946ttkfp'
-      : 'line://ti/p/@946ttkfp';
-
-    $('.line-btn').attr('href', lineHref);
-  });
-
-  
-
+   
   document.addEventListener('DOMContentLoaded', function () {
   // 找到左右兩個 collapse 區塊
   const collapses = document.querySelectorAll('.navbar-collapse');
@@ -610,6 +585,26 @@
   });
 });
 </script>
+
+<!-- navibar 自動出列表　不用按 功能-->
+<style>
+  /* 只在桌機啟用 hover 展開 */
+  @media (min-width: 992px) {
+
+    /* 第一層 dropdown hover */
+    .navbar .dropdown:hover>.dropdown-menu {
+      display: block;
+      margin-top: 0;
+      /* 修正位移 */
+    }
+
+    /* 禁止點擊 dropdown toggle 展開 */
+  .navbar-nav > li.dropdown > .nav-link {
+    pointer-events: none; /* 禁止點擊 */
+  }
+
+  }
+</style>
 
 
 
@@ -703,7 +698,7 @@
                 
                 <div class="card-body">
                   
-                  <img src="/assets/images/vips/data/logo.jpg" class="d-block w-100" alt="愛遊網" />
+                   <img src="/assets/images/vips/data/logo-515.jpg" class="d-block w-100" alt="515民宿" />
                   
 
                   
@@ -719,7 +714,7 @@
                 <img src="/assets/images/vips/data/bao.webp" class="card-img-top" alt="澎湖伯" />
                 <div class="card-body">
                   
-                  <img src="/assets/images/vips/data/logo.jpg" class="d-block w-100" alt="愛遊網" />
+                   <img src="/assets/images/vips/data/logo-515.jpg" class="d-block w-100" alt="515民宿" />
                   
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.9289842506105!2d119.57996689999999!3d23.5709939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346c5ae824259a0b%3A0x3bb290e03b30efff!2zODgw5r6O5rmW57ij6aas5YWs5biC5Lit6I-v6LevMzAy6Jmf!5e0!3m2!1szh-TW!2stw!4v1706953007158!5m2!1szh-TW!2stw" width="100%" height="80px" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -732,7 +727,7 @@
                 <img src="/assets/images/vips/data/yupin.jpg" class="card-img-top" alt="御品家食品" />
                 <div class="card-body">
                   
-                  <img src="/assets/images/vips/data/logo.jpg" class="d-block w-100" alt="愛遊網" />
+                  <img src="/assets/images/vips/data/logo-515.jpg" class="d-block w-100" alt="515民宿" />
                   
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58512.73746282605!2d119.52432919684462!3d23.56678804431003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346c5a8cc0c5cfa9%3A0x8eb301742e4c6e51!2z5b6h5ZOB5a626aOf5ZOB!5e0!3m2!1szh-TW!2stw!4v1707017634453!5m2!1szh-TW!2stw" width="100%" height="80px" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -744,7 +739,7 @@
                 <img src="/assets/images/vips/data/mako.webp" class="card-img-top" alt="媽宮食品" />
                 <div class="card-body">
                   
-                  <img src="/assets/images/vips/data/logo.jpg" class="d-block w-100" alt="愛遊網" />
+                   <img src="/assets/images/vips/data/logo-515.jpg" class="d-block w-100" alt="515民宿" />
                   
                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.202282746211!2d119.57741917438523!3d23.561177396016316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346c5a95598b3a33%3A0x1391f5767c09d2e9!2z5aq95a6u6aOf5ZOB!5e0!3m2!1szh-TW!2stw!4v1707019384695!5m2!1szh-TW!2stw" width="100%" height="80px" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>

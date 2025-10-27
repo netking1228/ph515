@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1380957323249292');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1380957323249292&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
 
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -118,8 +101,10 @@
 </head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQQS7ZDK" height="0" width="0"
+  
+<!-- google Tag manage -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NL3KZ8L6" height="0" width="0"
     style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
@@ -577,7 +562,7 @@
 <!-- line 連結 -->
 <div class="floating-button" id="pageline">
     <a  id="lineLink">
-        <img src="/assets/images/line.svg" alt="Button Image">
+        <img src="/assets/images/line.png" alt="Button Image">
     </a>
 </div>
 
@@ -615,19 +600,9 @@
  
 </nav>
 
-
+<!-- 改善回上一層 會關掉navi bar -->
 <script>
-  jQuery(function ($) {
-    // 根據設備寬度設定 line 連結
-    var lineHref = $(window).width() >= 768
-      ? 'line://ti/p/@946ttkfp'
-      : 'line://ti/p/@946ttkfp';
-
-    $('.line-btn').attr('href', lineHref);
-  });
-
-  
-
+   
   document.addEventListener('DOMContentLoaded', function () {
   // 找到左右兩個 collapse 區塊
   const collapses = document.querySelectorAll('.navbar-collapse');
@@ -650,6 +625,26 @@
   });
 });
 </script>
+
+<!-- navibar 自動出列表　不用按 功能-->
+<style>
+  /* 只在桌機啟用 hover 展開 */
+  @media (min-width: 992px) {
+
+    /* 第一層 dropdown hover */
+    .navbar .dropdown:hover>.dropdown-menu {
+      display: block;
+      margin-top: 0;
+      /* 修正位移 */
+    }
+
+    /* 禁止點擊 dropdown toggle 展開 */
+  .navbar-nav > li.dropdown > .nav-link {
+    pointer-events: none; /* 禁止點擊 */
+  }
+
+  }
+</style>
 
   <main class="main pt-4">
     <div class="container px-3 px-md-5 py-2">
