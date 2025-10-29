@@ -268,7 +268,7 @@
               
               
               <li>
-                <a class="dropdown-item" href="/paginatons/gd.html">景點介紹</a>
+                <a class="dropdown-item" href="/paginatons/jd.html">景點介紹</a>
               </li>
               
 
@@ -509,7 +509,7 @@
           </li>
           
           <li class="nav-item ms-3">
-            <a class="nav-link  fs-6"  href="/paginatons/gd.html">
+            <a class="nav-link  fs-6"  href="/paginatons/jd.html">
              <span class="nav-link-text">景點介紹</span>
             </a>
           </li>
@@ -940,101 +940,9 @@
 
 
 
-        <!-- 馬公市餐廳美食卡片 -->
-<div class="container px-3 px-md-5 py-5">
-  <h2 class="text-center mb-4 fw-bold">澎湖-海鮮餐廳介紹</h2>
-
-  <!-- 澎湖馬公市整體介紹 -->
-  <div class="row justify-content-center mb-4">
-    <div class="col-lg-12">
-      <div class="card border-0 shadow-sm">
-        <div class="card-body p-4">
-          <h4 class="card-title text-primary mb-3">
-            澎湖 馬公市海鮮餐廳地圖｜海鮮合菜 × 熱炒小館 × 在地風味料理
-          </h4>
-          <p class="card-text mb-3">
-            澎湖馬公市不僅是交通與觀光中心，更是美食聚集地！從
-            <strong>鮮定味</strong>、<strong>阿華海鮮</strong>、
-            <strong>澎漁宴</strong> 到 <strong>來福海鮮餐廳</strong>，
-            各式海鮮合菜、熱炒小館與懷舊餐館林立。無論是家庭聚餐、團體合菜，
-            還是想嚐鮮澎湖海味，馬公市都能滿足你的味蕾！
-          </p>
-        </div>
-      </div>
-    </div>
-   </div>
-
-
-
-
-
-         <div class="row g-4 justify-content-center" id="spotsContainer">
-        <!-- 卡片將由 JavaScript 動態生成 -->
-        </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="spotModal" tabindex="-1" aria-labelledby="spotModalLabel" aria-hidden="true">
-   <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content rounded-4 overflow-hidden">
-            <div class="modal-body p-0">
-                <img id="spotImage" src="" alt="" class="w-100 object-fit-cover" style="max-height: 300px;" />
-                <div class="p-4">
-                    <div class="d-flex justify-content-between mb-2">
-                        <span class="badge bg-secondary" id="spotLocation"></span>
-                        <span class="text-muted small">
-                            <i class="fa fa-star" style="color: #FBBC04;"></i> <span id="spotLikes"></span>
-                        </span>
-                    </div>
-                    <h4 id="spotTitle" class="fw-bold mb-3"></h4>
-                    <p id="spotDesc" class="text-muted"></p>
-                    <!-- 添加 Google 地圖容器 -->
-                    <div class="mt-4">
-                        <iframe id="spotMap" src="" width="100%" height="150" style="border:0; border-radius: 8px;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" aria-label="google 地圖"></iframe>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer border-0">
-                <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal" autofocus="">
-                    關閉
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<style>
-    .tlCardDesc {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        line-height: 1.4;
-        max-height: 2.8em;
-    }
-
-    .tlCard {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .tlCard:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
-    }
-
-    .tlCardImg {
-        height: 200px;
-    }
-
-    .object-fit-cover {
-        object-fit: cover;
-    }
-</style>
-
-<script>
+        <script>
    // 馬公市餐廳資料
-const spots = [
+window.spots = [
   {
     title: "阿華海鮮餐廳",
     location: "仁愛路",
@@ -1058,14 +966,6 @@ const spots = [
     img: "/assets/images/posts/magongseafood/澎漁宴.jpg",
     likes: "4.5分",
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0612857162655!2d119.56643057579798!3d23.56624229582059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346c5bfdd5ce4957%3A0xf5ea67685dfdf2a0!2z5r6O5ryB5a60IOeUn-eMm-a1t-muri3kurrmsKPmtbfprq7ppJDlu7Mg5b-F5ZCD576O6aOfIOWQiOiPnCDlnJjpq5Qg54m56Imy5paZ55CGIOWutuW6reiBmumkkCDljIXlu4LppJDlu7PmjqjolqY!5e0!3m2!1szh-TW!2stw!4v1760256951639!5m2!1szh-TW!2stw"
-  },
-  {
-    title: "臨海樓海鮮料理",
-    location: "臨海路",
-    desc: "澎湖人氣海鮮餐廳，現流漁獲新鮮上桌，必點海膽炒飯、清蒸石斑與海鮮痛風餐，品嚐道地海味與馬公港最美的臨海風景。",
-    img: "/assets/images/posts/magongseafood/臨海樓海鮮料理.jpg",
-    likes: "4.4分",
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1553730939813!2d119.56651140000001!3d23.5628626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346c5a8d1a7b936b%3A0x6564066e3de199cc!2z6Ieo5rW35qiT5rW36a6u5paZ55CG!5e0!3m2!1szh-TW!2stw!4v1761617119823!5m2!1szh-TW!2stw"
   },
   {
     title: "來福海鮮餐廳",
@@ -1167,109 +1067,149 @@ const spots = [
 ];
 
 
+</script>
+
+
+
+<!-- 景點卡片 -->
+<div class="container px-3 px-md-5 py-5">
+    <h2 class="text-center mb-4 fw-bold">澎湖-馬公市海鮮餐廳介紹</h2>
+
+    <!-- 澎湖馬公景點整體介紹 -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-lg-12">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h4 class="card-title text-primary mb-3">澎湖 馬公市海鮮餐廳地圖｜海鮮合菜 × 熱炒小館 × 在地風味料理</h4>
+                    <p class="card-text mb-3">
+                        澎湖馬公市不僅是交通與觀光中心，更是美食聚集地！從 <strong>鮮定味</strong>、<strong>阿華海鮮</strong>、 <strong>澎漁宴</strong> 到 <strong>來福海鮮餐廳</strong>， 各式海鮮合菜、熱炒小館與懷舊餐館林立。無論是家庭聚餐、團體合菜， 還是想嚐鮮澎湖海味，馬公市都能滿足你的味蕾！
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4 justify-content-center" id="spotsContainer">
+        <!-- 卡片將由 JavaScript 動態生成 -->
+    </div>
+</div>
+
+
+<style>
+    .tlCardDesc {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.4;
+        max-height: 2.8em;
+    }
+
+    .tlCard {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 1rem;
+        /* 圓角 */
+        overflow: hidden;
+        /* 裁掉子元素超出圓角的部分 */
+        background-color: white;
+        /* 背景放在 a 上 */
+    }
+
+    .tlCard:active {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .tlCardImg {
+        height: 200px;
+    }
+
+    .object-fit-cover {
+        object-fit: cover;
+    }
+
+
+    /* 只对md及以上屏幕设置95%高度 */
+    @media (min-width: 768px) {
+        .modal-dialog-scrollable .modal-content {
+            max-height: 95vh;
+        }
+    }
+</style>
+
+<script>
 
     // 生成卡片
     document.addEventListener('DOMContentLoaded', function () {
         const container = document.getElementById('spotsContainer');
 
-        spots.forEach((spot) => {
+        spots.forEach((spot, index) => {
+            const modalId = `spotModal${index}`;
+
             const cardHtml = `
-                    <div class="col-lg-4 col-md-6 col-12">
-                        <a href="#" class="tlCard text-decoration-none text-dark shadow-sm rounded-4 d-block overflow-hidden h-100"
-                            data-bs-toggle="modal" data-bs-target="#spotModal"
-                            data-title="${spot.title}"
-                            data-desc="${spot.desc}"
-                            data-img="${spot.img}"
-                            data-location="${spot.location}"
-                            data-likes="${spot.likes}"
-                            data-map="${spot.map}">
-                            <div class="tlCardImg position-relative">
-                                <img src="${spot.img}" class="w-100 h-100 object-fit-cover" alt="${spot.title}">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <button type="button" class="tlCard text-decoration-none text-dark shadow-sm rounded-4 d-block overflow-hidden h-100 border-0 bg-transparent p-0"
+                        data-bs-toggle="modal" data-bs-target="#${modalId}">
+                        <div class="tlCardImg position-relative">
+                            <img src="${spot.img}" class="w-100 h-100 object-fit-cover" alt="${spot.title}">
+                        </div>
+                        <div class="tlCardBody p-3 bg-white">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-secondary">${spot.location}</span>
+                                <span class="text-muted small">
+                                    <img src="/assets/images/posts/north/map.png" alt="地圖" class="me-1"
+                                        style="width: 20px; height: 20px; object-fit: contain;">
+                                    google 地圖
+                                </span>
                             </div>
-                            <div class="tlCardBody p-3 bg-white">
+                            <h5 class="fw-bold mb-2">${spot.title}</h5>
+                            <p class="text-muted small tlCardDesc">${spot.desc}</p>
+                        </div>
+                    </button>
+                </div>
+            `;
+
+            const modalHtml = `
+            <div class="modal fade" id="${modalId}" tabindex="-1" aria-labelledby="${modalId}Label" aria-hidden="true">
+               <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable modal-lg">
+                    <div class="modal-content rounded-4 overflow-hidden">
+                        <div class="modal-body p-0">
+                            <img src="${spot.img}" alt="" class="w-100 object-fit-cover" style="max-height: 300px;">
+                            <div class="p-4">
                                 <div class="d-flex justify-content-between mb-2">
                                     <span class="badge bg-secondary">${spot.location}</span>
                                     <span class="text-muted small">
-                                        <img src="/assets/images/posts/north/map.png" alt="地圖" class="me-1"
-                                            style="width: 20px; height: 20px; object-fit: contain;">
-                                        google 地圖
+                                        <i class="fa fa-star" style="color: #FBBC04;"></i> ${spot.likes}
                                     </span>
                                 </div>
-                                <h5 class="fw-bold mb-2">${spot.title}</h5>
-                                <p class="text-muted small tlCardDesc">${spot.desc}</p>
+                                <h4 class="fw-bold mb-3">${spot.title}</h4>
+                                <p class="text-muted">${spot.desc}</p>
+                                <div class="mt-4">
+                                    <iframe src="${spot.map}" width="100%" height="150" style="border:0; border-radius: 8px;"
+                                        allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"
+                                        aria-label="google 地圖"></iframe>
+                                </div>
                             </div>
-                        </a>
+                        </div>
+                        <div class="modal-footer border-0">
+                            <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">
+                                關閉
+                            </button>
+                        </div>
                     </div>
-                `;
+                </div>
+            </div>
+        `;
+
             container.innerHTML += cardHtml;
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
         });
     });
 
-    // Modal 相關 JavaScript
-    document.addEventListener('touchmove', function (e) {
-        if (e.cancelable) {
-            // 不做 preventDefault，保留自然滾動
-        }
-    }, { passive: true });
-
-    const spotModal = document.getElementById('spotModal');
-    let currentMapUrl = ''; // 儲存當前地圖 URL
-
-    // 🔸 顯示 Modal 時儲存資料
-    spotModal.addEventListener('show.bs.modal', event => {
-        const trigger = event.relatedTarget;
-        document.getElementById('spotTitle').textContent = trigger.getAttribute('data-title');
-        document.getElementById('spotDesc').textContent = trigger.getAttribute('data-desc');
-        document.getElementById('spotImage').src = trigger.getAttribute('data-img');
-        document.getElementById('spotLocation').textContent = trigger.getAttribute('data-location');
-        document.getElementById('spotLikes').textContent = trigger.getAttribute('data-likes');
-
-        // 儲存地圖 URL，但不立即載入
-        currentMapUrl = trigger.getAttribute('data-map');
-    });
-
-    // 🔸 當 Modal 完全顯示後再載入地圖
-    spotModal.addEventListener('shown.bs.modal', () => {
-        document.body.style.overflow = 'hidden';
-
-        // 確保 DOM 完全載入後再設定地圖
-        setTimeout(() => {
-            if (currentMapUrl) {
-                document.getElementById('spotMap').src = currentMapUrl;
-            }
-        }, 100);
-
-        const closeButton = spotModal.querySelector('[data-bs-dismiss="modal"]');
-        if (closeButton) {
-            closeButton.focus();
-        }
-    });
-
-    // 🔸 在 Modal 開始隱藏時移除焦點
-    spotModal.addEventListener('hide.bs.modal', () => {
-        const focusedElement = document.activeElement;
-        if (spotModal.contains(focusedElement)) {
-            focusedElement.blur();
-        }
-    });
-
-    // 🔸 當 Modal 完全隱藏後，確保焦點回到觸發元素
-    spotModal.addEventListener('hidden.bs.modal', (event) => {
-        const trigger = event.relatedTarget;
-        if (trigger && typeof trigger.focus === 'function') {
-            setTimeout(() => {
-                trigger.focus();
-            }, 100);
-        }
-        document.body.style.overflow = '';
-
-        // 清除地圖 URL，避免重複載入
-        document.getElementById('spotMap').src = '';
-        currentMapUrl = '';
-    });
 </script>
-
-
 
 
 
