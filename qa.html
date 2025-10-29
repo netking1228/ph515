@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>澎湖旅遊 Q&A 常見問題（2025版）</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f8f9fa; }
+    .category-title { margin-top: 2rem; color: #0d6efd; }
+    .copy-btn { float: right; font-size: 0.9rem; }
+    .search-box { max-width: 400px; margin: 20px auto; }
+  </style>
+</head>
+<body>
+  <div class="container py-4">
+    <h1 class="text-center mb-4">🌊 澎湖旅遊 Q&A 常見問題（2025版）</h1>
+    <p class="text-center"><a href="https://www.ph515.tw" target="_blank">www.ph515.tw</a></p>
+
+    <!-- 搜尋框 -->
+    <div class="input-group search-box">
+      <span class="input-group-text">🔍</span>
+      <input type="text" id="searchInput" class="form-control" placeholder="輸入關鍵字搜尋問題...">
+    </div>
+
+    <div id="faqContainer">
+      <!-- 範例分類：交通方式 / 報到流程 -->
+      <h3 class="category-title">🚢 交通方式 / 報到流程</h3>
+      <div class="accordion" id="accordionTransport"></div>
+
+      <h3 class="category-title">🏝 行程與活動</h3>
+      <div class="accordion" id="accordionTour"></div>
+
+      <h3 class="category-title">🏡 住宿與包棟</h3>
+      <div class="accordion" id="accordionStay"></div>
+
+      <h3 class="category-title">💰 價格與費用</h3>
+      <div class="accordion" id="accordionPrice"></div>
+
+      <h3 class="category-title">🚗 交通與租車</h3>
+      <div class="accordion" id="accordionCar"></div>
+
+      <h3 class="category-title">🍽️ 在地美食推薦</h3>
+      <div class="accordion" id="accordionFood"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const data = [
+      {cat:"🚢交通方式 / 報到流程", q:"要怎麼到澎湖？坐船還是搭飛機？", a:"✈️ 台北、台中、高雄、嘉義、台南出發約40～60分鐘抵達。<br>🛥 布袋港搭船約70～80分鐘。<br><br>套裝含來回船票，可加價改搭飛機。"},
+      {cat:"🚢交通方式 / 報到流程", q:"行程報到地點在哪裡？", a:"🚢 布袋港旅客服務中心／✈️ 各地機場。<br>報到：開船或起飛前60分鐘。<br>抵達澎湖後車行接送至租車點。"},
+      {cat:"🚢交通方式 / 報到流程", q:"機場取票流程", a:"當天攜帶身份證或健保卡至華信或立榮航空櫃檯辦理登機證，也可用自助取票機掃描身份證／健保卡領取登機證。"},
+      {cat:"🚢交通方式 / 報到流程", q:"搭船取票流程", a:"提前1小時抵達港口，大人攜帶身份證、小孩帶健保卡至船公司櫃台劃位取票。<br>📍 <a href='https://goo.gl/maps/ZvSyuXhYNHaa39Qx9' target='_blank'>嘉義布袋港旅客服務中心導航</a>"},
+      {cat:"🚢交通方式 / 報到流程", q:"布袋開船時間", a:"布袋→馬公 10:00（±30分）<br>馬公→布袋 16:00（±30分）<br>船班由船公司安排，無法指定時段。<br><a href='https://www.ph515.tw/2024/01/05/question.html' target='_blank'>船票/機票常見問題</a>"},
+
+      {cat:"🏝行程與活動", q:"三選一行程有哪些？", a:"本島三選一：夜釣小管、海洋牧場、BBQ吃到飽。<br>跨島三選一：東海一日遊、吉貝水上樂翻天、七美望安自由行。"},
+      {cat:"🏝行程與活動", q:"海洋牧場時段", a:"📍 星光海洋牧場<br>⏱ 約2小時，請提前20分鐘報到。<br>上午：09:00／10:00／11:00／12:00<br>下午：13:00／14:00／15:00"},
+      {cat:"🏝行程與活動", q:"吉貝船班時間", a:"📍 <a href='https://maps.app.goo.gl/FZv5cjVQbrcn8ivy5' target='_blank'>赤崁碼頭</a><br>航程15～20分鐘，提前20分鐘報到。<br>上午：08:30／09:30／10:30／11:30<br>下午：13:30<br>回程：每小時一班，依現場安排。"},
+      {cat:"🏝行程與活動", q:"花火專船", a:"出發20:30（20:10報到）<br>回程約21:30。<br>📍 南海遊客中心 <a href='https://maps.app.goo.gl/ELQ7XLikY9uyUvDT7' target='_blank'>Google 導航</a>"},
+      {cat:"🏝行程與活動", q:"七美行程", a:"約上午08:00出發，下午14:00～15:00回程，實際時間前一日通知。<br>📍 南海遊客中心 <a href='https://maps.app.goo.gl/ELQ7XLikY9uyUvDT7' target='_blank'>Google 導航</a>"},
+
+      {cat:"🏡住宿與包棟", q:"是否可包棟？多少人可包？", a:"可包棟，約8～20人，部分民宿附麻將、KTV、烤肉區。"},
+      {cat:"🏡住宿與包棟", q:"入住與退房時間？", a:"入住15:00後，退房11:00前。提供毛巾、牙刷、吹風機、沐浴用品。"},
+
+      {cat:"💰價格與費用", q:"方案費用是多少？", a:"雙人房6200／人、四人房5500／人，假日+300。兒童與長者-300，未滿3歲500元。含船票、住宿兩晚、機車三天與行程。"},
+
+      {cat:"🚗交通與租車", q:"機車是包含的嗎？", a:"含機車三天（125cc雙人車），需駕照，油費自理。租賃汽機車提供機場／碼頭接送服務。"},
+      {cat:"🚗交通與租車", q:"電動車可租嗎？", a:"可租一般電動車400～600／天，高階車700～900／天。"},
+
+      {cat:"🍽️在地美食推薦", q:"澎湖有哪些推薦美食？", a:"馬公：北新橋牛雜湯、郵局口蔥油餅<br>湖西：兩個番茄農場（二館）<br>吉貝：海鮮快炒、現撈魚湯<br>夜晚：BBQ吃到飽、自助海鮮餐廳。"}
+    ];
+
+    // 建立 Accordion
+    function createAccordionItem(q, a, id) {
+      return `<div class="accordion-item"><h2 class="accordion-header" id="h${id}"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c${id}">${q}</button></h2><div id="c${id}" class="accordion-collapse collapse" data-bs-parent="#accordion${id}"><div class="accordion-body">${a}<button class='btn btn-sm btn-outline-secondary copy-btn' onclick='copyText(${JSON.stringify(a)})'>複製</button></div></div></div>`;
+    }
+
+    function renderFAQs() {
+      const categories = {
+        '🚢交通方式 / 報到流程': document.getElementById('accordionTransport'),
+        '🏝行程與活動': document.getElementById('accordionTour'),
+        '🏡住宿與包棟': document.getElementById('accordionStay'),
+        '💰價格與費用': document.getElementById('accordionPrice'),
+        '🚗交通與租車': document.getElementById('accordionCar'),
+        '🍽️在地美食推薦': document.getElementById('accordionFood')
+      };
+      let id = 0;
+      data.forEach(item => {
+        id++;
+        const el = createAccordionItem(item.q, item.a, id);
+        categories[item.cat]?.insertAdjacentHTML('beforeend', el);
+      });
+    }
+
+    function copyText(text) {
+      navigator.clipboard.writeText(text.replace(/<br>/g, '\n').replace(/<[^>]*>?/gm, ''));
+      alert('已複製內容');
+    }
+
+    // 搜尋功能
+    document.getElementById('searchInput').addEventListener('input', e => {
+      const keyword = e.target.value.toLowerCase();
+      document.querySelectorAll('.accordion-item').forEach(item => {
+        item.style.display = item.textContent.toLowerCase().includes(keyword) ? '' : 'none';
+      });
+    });
+
+    renderFAQs();
+  </script>
+</body>
+</html>
