@@ -7,9 +7,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     :root{
-      --ocean-1:#0d6efd;
-      --ocean-2:#0aa2c0;
-      --ocean-3:#e7f5ff;
+      --ocean-1:#0d6efd; /* 主藍 */
+      --ocean-2:#0aa2c0; /* 青藍 */
+      --ocean-3:#e7f5ff; /* 淺藍底 */
       --ink:#0b2239;
     }
     body{background:var(--ocean-3); color:var(--ink)}
@@ -25,7 +25,6 @@
   </style>
 </head>
 <body>
-  <!-- 導覽列 -->
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark shadow-sm">
     <div class="container-fluid px-4">
       <a class="navbar-brand fw-bold" href="#top">澎湖旅遊 Q&A</a>
@@ -34,14 +33,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navBar">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#sec0">💬 詢問SOP／客服話術模板</a></li>
-          <li class="nav-item"><a class="nav-link" href="#sec1">💬 一般客服諮詢／開場訊息</a></li>
-          <li class="nav-item"><a class="nav-link" href="#sec2">🚢 交通方式 / 報到流程</a></li>
-          <li class="nav-item"><a class="nav-link" href="#sec3">🏝 行程與活動</a></li>
-          <li class="nav-item"><a class="nav-link" href="#sec4">🏡 住宿與包棟</a></li>
-          <li class="nav-item"><a class="nav-link" href="#sec5">💰 價格與費用</a></li>
-          <li class="nav-item"><a class="nav-link" href="#sec6">🚗 交通與租車</a></li>
-          <li class="nav-item"><a class="nav-link" href="#sec7">🍽️ 在地美食推薦</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sec0">🍽️在地美食推薦</a></li><li class="nav-item"><a class="nav-link" href="#sec1">🍽️在地景點推薦</a></li><li class="nav-item"><a class="nav-link" href="#sec2">🏝行程與活動</a></li><li class="nav-item"><a class="nav-link" href="#sec3">🏡住宿與包棟</a></li><li class="nav-item"><a class="nav-link" href="#sec4">💬 詢問SOP／客服話術模板</a></li><li class="nav-item"><a class="nav-link" href="#sec5">💰價格與費用</a></li><li class="nav-item"><a class="nav-link" href="#sec6">🚗交通與租車</a></li><li class="nav-item"><a class="nav-link" href="#sec7">🚢交通方式 / 報到流程</a></li><li class="nav-item"><a class="nav-link" href="#sec8">行前通知</a></li><li class="nav-item"><a class="nav-link" href="#sec9">訂購機票船票資料</a></li><li class="nav-item"><a class="nav-link" href="#sec10">免稅卡</a></li>
         </ul>
       </div>
     </div>
@@ -58,53 +50,622 @@
       </div>
     </header>
 
-    <!-- 以下放 FAQ 內容（由 Excel 自動產生） -->
-    <h3 id="sec0" class="category-title">💬 詢問SOP／客服話術模板</h3>
-    <div class="accordion" id="acc0">
-      <div class="accordion-item">
-        <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-0-1" aria-expanded="true">通用開場（首次訊息）</button></h2>
-        <div id="c-0-1" class="accordion-collapse collapse show">
-          <div class="accordion-body answer">
-            您好～歡迎來澎湖💕<br>
-            我們可以協助安排 住宿、機票、船票、機/汽車、包車環島、東海/南海一日遊 等行程 😊<br>
-            想先跟您確認一下：<br>
-            📅 旅行日期：<br>
-            👥 預計人數：<br><br>
-            我先幫您查空房與機船票時段，再提供最合適的方案給您～✨
-            <div class="text-end mt-2"><button class="btn btn-sm btn-outline-primary" onclick="copyAnswer(this)">📋 複製</button></div>
+    <h3 id="sec0" class="category-title">🍽️在地美食推薦</h3>
+<div class="accordion" id="acc0">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-0-0">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-0-0" aria-expanded="true">澎湖有哪些推薦美食？</button>
+          </h2>
+          <div id="c-0-0" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              這裡有整理好的 澎湖各區美食資訊，您可以依自己的口味和行程路線來挑選餐廳 🍴<br>（馬公、北環、南環、湖西、離島）<br><br>📍 澎湖美食地圖<br><a href="https://www.ph515.tw/paginatons/ms.html" target="_blank" rel="noopener">https://www.ph515.tw/paginatons/ms.html</a>
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`這裡有整理好的 澎湖各區美食資訊，您可以依自己的口味和行程路線來挑選餐廳 🍴<br>（馬公、北環、南環、湖西、離島）<br><br>📍 澎湖美食地圖<br><a href="https://www.ph515.tw/paginatons/ms.html" target="_blank" rel="noopener">https://www.ph515.tw/paginatons/ms.html</a>`)">📋 複製</button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- 這裡依序可放 Q&A 清單 ... -->
-    </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-0-1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-0-1" aria-expanded="true">詢問早餐</button>
+          </h2>
+          <div id="c-0-1" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              我們這邊沒有附早餐喔～<br>民宿離市區很近，大約 5～6 分鐘車程，<br>建議可以直接去「澎湖早餐街」逛逛，<br>在地早點都超好吃 😋<br>我們也把早餐費用直接回饋在房價裡囉～💕
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`我們這邊沒有附早餐喔～<br>民宿離市區很近，大約 5～6 分鐘車程，<br>建議可以直接去「澎湖早餐街」逛逛，<br>在地早點都超好吃 😋<br>我們也把早餐費用直接回饋在房價裡囉～💕`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div></div>
+<h3 id="sec1" class="category-title">🍽️在地景點推薦</h3>
+<div class="accordion" id="acc1">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-1-0">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-1-0" aria-expanded="true">澎湖有哪些推薦景點？</button>
+          </h2>
+          <div id="c-1-0" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              澎湖旅遊景點總覽｜馬公市區、北環、南環、湖西及離島推薦 <br><br><a href="https://www.ph515.tw/paginatons/jd.html" target="_blank" rel="noopener">https://www.ph515.tw/paginatons/jd.html</a>
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`澎湖旅遊景點總覽｜馬公市區、北環、南環、湖西及離島推薦 <br><br><a href="https://www.ph515.tw/paginatons/jd.html" target="_blank" rel="noopener">https://www.ph515.tw/paginatons/jd.html</a>`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-1-1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-1-1" aria-expanded="true">摩西分海查詢系統</button>
+          </h2>
+          <div id="c-1-1" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              摩西分海查詢系統<br><a href="https://www.iyou.tw/2023/12/21/charts.html" target="_blank" rel="noopener">https://www.iyou.tw/2023/12/21/charts.html</a>
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`摩西分海查詢系統<br><a href="https://www.iyou.tw/2023/12/21/charts.html" target="_blank" rel="noopener">https://www.iyou.tw/2023/12/21/charts.html</a>`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div></div>
+<h3 id="sec2" class="category-title">🏝行程與活動</h3>
+<div class="accordion" id="acc2">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-2-0">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-2-0" aria-expanded="true">海洋牧場時段</button>
+          </h2>
+          <div id="c-2-0" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              📍 報到地點：星光海洋牧場（<a href="https://maps.app.goo.gl/ELQ7XLikY9uyUvDT7）" target="_blank" rel="noopener">https://maps.app.goo.gl/ELQ7XLikY9uyUvDT7）</a><br>⏱ 行程時間：約 2 小時<br>📅 請提前 20 分鐘辦理報到手續<br><br>上午時段：09:00／10:00／11:00／12:00<br>下午時段：13:00／14:00／15:00
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`📍 報到地點：星光海洋牧場（<a href="https://maps.app.goo.gl/ELQ7XLikY9uyUvDT7）" target="_blank" rel="noopener">https://maps.app.goo.gl/ELQ7XLikY9uyUvDT7）</a><br>⏱ 行程時間：約 2 小時<br>📅 請提前 20 分鐘辦理報到手續<br><br>上午時段：09:00／10:00／11:00／12:00<br>下午時段：13:00／14:00／15:00`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-2-1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-2-1" aria-expanded="true">吉貝船班時間</button>
+          </h2>
+          <div id="c-2-1" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              📍 出發地點：<a href="https://maps.app.goo.gl/FZv5cjVQbrcn8ivy5" target="_blank" rel="noopener">https://maps.app.goo.gl/FZv5cjVQbrcn8ivy5</a><br>⛴ 坐船時間：約 15～20 分鐘<br>📅 請提前 20 分鐘辦理報到<br><br>出發時間<br>上午：08:30／09:30／10:30／11:30<br>下午：13:30<br><br>回程時間<br>於現場報到時預約，約每小時一班，依現場安排為主。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`📍 出發地點：<a href="https://maps.app.goo.gl/FZv5cjVQbrcn8ivy5" target="_blank" rel="noopener">https://maps.app.goo.gl/FZv5cjVQbrcn8ivy5</a><br>⛴ 坐船時間：約 15～20 分鐘<br>📅 請提前 20 分鐘辦理報到<br><br>出發時間<br>上午：08:30／09:30／10:30／11:30<br>下午：13:30<br><br>回程時間<br>於現場報到時預約，約每小時一班，依現場安排為主。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-2-2">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-2-2" aria-expanded="true">吉貝島介紹</button>
+          </h2>
+          <div id="c-2-2" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              吉貝島介紹<br><br><a href="https://www.ph515.tw/2024/09/12/jibei.html" target="_blank" rel="noopener">https://www.ph515.tw/2024/09/12/jibei.html</a>
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`吉貝島介紹<br><br><a href="https://www.ph515.tw/2024/09/12/jibei.html" target="_blank" rel="noopener">https://www.ph515.tw/2024/09/12/jibei.html</a>`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-2-3">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-2-3" aria-expanded="true">花火專船</button>
+          </h2>
+          <div id="c-2-3" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              出發時間：20:30 開船（20:10 前報到）<br>回程時間：約 21:30 回到碼頭<br><br>📍 報到地點：南海遊客中心（<a href="https://maps.app.goo.gl/ELQ7XLikY9uyUvDT7）" target="_blank" rel="noopener">https://maps.app.goo.gl/ELQ7XLikY9uyUvDT7）</a>
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`出發時間：20:30 開船（20:10 前報到）<br>回程時間：約 21:30 回到碼頭<br><br>📍 報到地點：南海遊客中心（<a href="https://maps.app.goo.gl/ELQ7XLikY9uyUvDT7）" target="_blank" rel="noopener">https://maps.app.goo.gl/ELQ7XLikY9uyUvDT7）</a>`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-2-4">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-2-4" aria-expanded="true">七美行程</button>
+          </h2>
+          <div id="c-2-4" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              一般出發時間約上午 08:00 上下，回程時間約下午 14:00～15:00。<br>具體船班時間會於前一天通知。<br><br>📍 報到地點：南海遊客中心（<a href="https://maps.app.goo.gl/ELQ7XLikY9uyUvDT7）" target="_blank" rel="noopener">https://maps.app.goo.gl/ELQ7XLikY9uyUvDT7）</a>
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`一般出發時間約上午 08:00 上下，回程時間約下午 14:00～15:00。<br>具體船班時間會於前一天通知。<br><br>📍 報到地點：南海遊客中心（<a href="https://maps.app.goo.gl/ELQ7XLikY9uyUvDT7）" target="_blank" rel="noopener">https://maps.app.goo.gl/ELQ7XLikY9uyUvDT7）</a>`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-2-5">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-2-5" aria-expanded="true">三選一行程有哪些？</button>
+          </h2>
+          <div id="c-2-5" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              【本島行程（三選一）】<br>🌌 夜釣小管：夜晚出海體驗釣小管。<br>🦀 海洋牧場：平台釣魚、烤牡蠣、海上平台活動。<br>🔥 BBQ 吃到飽：享用豐富澎湖食材自助燒烤。<br><br>【跨島行程（三選一）】<br>🏝 東海一日遊：巡航、踏浪、水上活動。<br>🚤 吉貝水上樂翻天：香蕉船、浮潛、SUP 等活動。<br>🛵 七美望安自由行：騎機車探索雙心石滬、藍洞等景點。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`【本島行程（三選一）】<br>🌌 夜釣小管：夜晚出海體驗釣小管。<br>🦀 海洋牧場：平台釣魚、烤牡蠣、海上平台活動。<br>🔥 BBQ 吃到飽：享用豐富澎湖食材自助燒烤。<br><br>【跨島行程（三選一）】<br>🏝 東海一日遊：巡航、踏浪、水上活動。<br>🚤 吉貝水上樂翻天：香蕉船、浮潛、SUP 等活動。<br>🛵 七美望安自由行：騎機車探索雙心石滬、藍洞等景點。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-2-6">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-2-6" aria-expanded="true">有哪些套裝行程方案？</button>
+          </h2>
+          <div id="c-2-6" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              目前提供：<br>1️⃣ 澎湖三天兩夜套裝（住宿＋船票＋行程）。<br>2️⃣ 澎湖自由行（住宿＋船票＋機車）。<br>3️⃣ 包棟行程（包棟住宿＋機票／船票＋機車＋行程規劃）。<br>
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`目前提供：<br>1️⃣ 澎湖三天兩夜套裝（住宿＋船票＋行程）。<br>2️⃣ 澎湖自由行（住宿＋船票＋機車）。<br>3️⃣ 包棟行程（包棟住宿＋機票／船票＋機車＋行程規劃）。<br>`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-2-7">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-2-7" aria-expanded="true">有「機＋酒」或「船＋酒」套票嗎？</button>
+          </h2>
+          <div id="c-2-7" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              有的，我們可協助代訂「機＋酒」或「船＋酒」方案。<br>若您已自行購票，也可選購純住宿或行程票券。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`有的，我們可協助代訂「機＋酒」或「船＋酒」方案。<br>若您已自行購票，也可選購純住宿或行程票券。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-2-8">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-2-8" aria-expanded="true">行程多久前可以取消？</button>
+          </h2>
+          <div id="c-2-8" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              依據【國內旅遊定型化契約書】第十一條規定：<br><br>通知時間（以上班日計）	收取比例<br>出發前 21～30 日	10%<br>出發前 11～20 日	20%<br>出發前 4～10 日	30%<br>出發前 1～3 日	70%<br>出發當日或之後	100%<br>若旅行社實際損失高於上述標準，得依實際損害請求賠償。<br>☔ 若遇颱風或船班停駛，可延期或全額退費。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`依據【國內旅遊定型化契約書】第十一條規定：<br><br>通知時間（以上班日計）	收取比例<br>出發前 21～30 日	10%<br>出發前 11～20 日	20%<br>出發前 4～10 日	30%<br>出發前 1～3 日	70%<br>出發當日或之後	100%<br>若旅行社實際損失高於上述標準，得依實際損害請求賠償。<br>☔ 若遇颱風或船班停駛，可延期或全額退費。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div></div>
+<h3 id="sec3" class="category-title">🏡住宿與包棟</h3>
+<div class="accordion" id="acc3">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-3-0">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-3-0" aria-expanded="true">是否有麻將、KTV？</button>
+          </h2>
+          <div id="c-3-0" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              部分民宿提供 🀄 麻將桌、🎤 KTV 包廂及烤肉區。<br>報名時可註明需求，我們會盡量安排有相關設施的房型。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`部分民宿提供 🀄 麻將桌、🎤 KTV 包廂及烤肉區。<br>報名時可註明需求，我們會盡量安排有相關設施的房型。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-3-1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-3-1" aria-expanded="true">入住與退房時間是？</button>
+          </h2>
+          <div id="c-3-1" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              入住時間：15:00 以後。<br>退房時間：10:00 前。<br>備品：提供吹風機、浴巾、沐浴乳、洗髮精等盥洗用品。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`入住時間：15:00 以後。<br>退房時間：10:00 前。<br>備品：提供吹風機、浴巾、沐浴乳、洗髮精等盥洗用品。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-3-2">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-3-2" aria-expanded="true">訂金與付款方式？</button>
+          </h2>
+          <div id="c-3-2" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              訂金：每人收取總額 50%。<br>尾款：出發前 3 天內完成。<br>匯款帳號：報名後提供專屬帳號。<br>
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`訂金：每人收取總額 50%。<br>尾款：出發前 3 天內完成。<br>匯款帳號：報名後提供專屬帳號。<br>`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-3-3">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-3-3" aria-expanded="true">請問目前有空房嗎？</button>
+          </h2>
+          <div id="c-3-3" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              請提供以下資訊，我們將立即回覆空房狀況：<br>📅 出發日期。<br>👨‍👩‍👧‍👦 旅客人數。<br>🏡 房型（或是否包棟）。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`請提供以下資訊，我們將立即回覆空房狀況：<br>📅 出發日期。<br>👨‍👩‍👧‍👦 旅客人數。<br>🏡 房型（或是否包棟）。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-3-4">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-3-4" aria-expanded="true">是否可包棟？多少人可包？</button>
+          </h2>
+          <div id="c-3-4" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              ✅ 可包棟！包棟人數依民宿而定，通常為 10～30 人。<br>多數包棟房型設有麻將桌、KTV、烤肉區。<br>請提供「出發日期＋人數」，我們會推薦合適的房型與報價。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`✅ 可包棟！包棟人數依民宿而定，通常為 10～30 人。<br>多數包棟房型設有麻將桌、KTV、烤肉區。<br>請提供「出發日期＋人數」，我們會推薦合適的房型與報價。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div></div>
+<h3 id="sec4" class="category-title">💬 詢問SOP／客服話術模板</h3>
+<div class="accordion" id="acc4">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-4-0">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-4-0" aria-expanded="true">通用開場（首次訊息）</button>
+          </h2>
+          <div id="c-4-0" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              一些旅遊資料給您參考
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`一些旅遊資料給您參考`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-4-1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-4-1" aria-expanded="true">通用開場（首次訊息）</button>
+          </h2>
+          <div id="c-4-1" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              您好～歡迎來澎湖💕<br>我們可以協助安排 住宿、機票、船票、機/汽車、包車環島、東海/南海一日遊 等行程 😊<br><br>想先跟您確認一下：<br>📅 旅行日期：<br>👥 預計人數：<br><br>我先幫您查空房與機船票時段，再提供最合適的方案給您～✨
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`您好～歡迎來澎湖💕<br>我們可以協助安排 住宿、機票、船票、機/汽車、包車環島、東海/南海一日遊 等行程 😊<br><br>想先跟您確認一下：<br>📅 旅行日期：<br>👥 預計人數：<br><br>我先幫您查空房與機船票時段，再提供最合適的方案給您～✨`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-4-2">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-4-2" aria-expanded="true">客人只問「有沒有套裝／多少錢？」</button>
+          </h2>
+          <div id="c-4-2" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              有喔～我們有 機票＋住宿 或 船票＋住宿 的套裝行程✈️🏝️<br>自由行、跳島、水上活動都能幫您一起安排✨<br>價格會依 日期、人數和房型 不同，<br>我幫您看看怎樣搭最划算～<br><br>📅 旅遊日期？<br>👥 幾位？<br>🛫 若搭飛機，預計從哪個城市出發？（台北／台中／嘉義／高雄）<br><br>我幫您查給您 😊
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`有喔～我們有 機票＋住宿 或 船票＋住宿 的套裝行程✈️🏝️<br>自由行、跳島、水上活動都能幫您一起安排✨<br>價格會依 日期、人數和房型 不同，<br>我幫您看看怎樣搭最划算～<br><br>📅 旅遊日期？<br>👥 幾位？<br>🛫 若搭飛機，預計從哪個城市出發？（台北／台中／嘉義／高雄）<br><br>我幫您查給您 😊`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-4-3">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-4-3" aria-expanded="true">客人只給日期（沒給人數）</button>
+          </h2>
+          <div id="c-4-3" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              請問方便告訴我預計幾位旅客嗎？<br>另外想確認一下，是打算搭 ✈️ 飛機還是 ⛴️ 坐船來澎湖呢？<br>因為人數和交通方式會影響住宿與行程安排 😊<br><br>人數給我之後，我就能幫您整理報價與建議方案囉～
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`請問方便告訴我預計幾位旅客嗎？<br>另外想確認一下，是打算搭 ✈️ 飛機還是 ⛴️ 坐船來澎湖呢？<br>因為人數和交通方式會影響住宿與行程安排 😊<br><br>人數給我之後，我就能幫您整理報價與建議方案囉～`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-4-4">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-4-4" aria-expanded="true">客人只問住宿</button>
+          </h2>
+          <div id="c-4-4" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              OK沒問題，我們有多間包棟與海景民宿可以選～<br>麻煩您提供：<br>📅 入住日期：<br>👥 人數：<br>🏠 有沒有偏好房型？（包棟／雙人房／四人房）<br><br>我幫您查空房並推薦幾間評價最好的給您參考 💕
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`OK沒問題，我們有多間包棟與海景民宿可以選～<br>麻煩您提供：<br>📅 入住日期：<br>👥 人數：<br>🏠 有沒有偏好房型？（包棟／雙人房／四人房）<br><br>我幫您查空房並推薦幾間評價最好的給您參考 💕`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-4-5">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-4-5" aria-expanded="true">客人沒回覆（可補發）</button>
+          </h2>
+          <div id="c-4-5" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              不急喔～等您方便再回就可以 😊<br>我在這邊隨時替您查位～
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`不急喔～等您方便再回就可以 😊<br>我在這邊隨時替您查位～`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-4-6">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-4-6" aria-expanded="true">結尾確認（準備報價前）</button>
+          </h2>
+          <div id="c-4-6" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              收到，感謝您～<br>我這邊先幫您查空房與航班票價，<br>稍後提供報價與建議行程給您 ✨
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`收到，感謝您～<br>我這邊先幫您查空房與航班票價，<br>稍後提供報價與建議行程給您 ✨`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div></div>
+<h3 id="sec5" class="category-title">💰價格與費用</h3>
+<div class="accordion" id="acc5">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-5-0">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-5-0" aria-expanded="true">方案費用是多少？</button>
+          </h2>
+          <div id="c-5-0" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              雙人房（2 位）：NT$6,200／位。<br>四人房（4 位）：NT$5,500／位。<br>假日加價 NT$300／位。<br>兒童（3～12 歲）／長者（65 歲以上）減 NT$300。<br>未滿 3 歲不佔床僅收 NT$500（含保險）。<br><br>📦 方案內容：來回船票＋住宿兩晚＋機車三天＋兩項行程（三選一＋跨島三選一）。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`雙人房（2 位）：NT$6,200／位。<br>四人房（4 位）：NT$5,500／位。<br>假日加價 NT$300／位。<br>兒童（3～12 歲）／長者（65 歲以上）減 NT$300。<br>未滿 3 歲不佔床僅收 NT$500（含保險）。<br><br>📦 方案內容：來回船票＋住宿兩晚＋機車三天＋兩項行程（三選一＋跨島三選一）。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-5-1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-5-1" aria-expanded="true">大人、小孩價格一樣嗎？</button>
+          </h2>
+          <div id="c-5-1" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              不一樣：<br>成人：依房型價格計算。<br>兒童（3～12 歲）與長者（65 歲以上）：各減 300 元。<br>幼童（未滿 3 歲、不佔床）：僅收 500 元。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`不一樣：<br>成人：依房型價格計算。<br>兒童（3～12 歲）與長者（65 歲以上）：各減 300 元。<br>幼童（未滿 3 歲、不佔床）：僅收 500 元。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-5-2">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-5-2" aria-expanded="true">可以刷卡付款嗎？</button>
+          </h2>
+          <div id="c-5-2" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              ✅ 目前只提供　ATM 匯款及銀行轉帳。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`✅ 目前只提供　ATM 匯款及銀行轉帳。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div></div>
+<h3 id="sec6" class="category-title">🚗交通與租車</h3>
+<div class="accordion" id="acc6">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-6-0">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-6-0" aria-expanded="true">機車是包含的嗎？</button>
+          </h2>
+          <div id="c-6-0" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              是的，套裝方案含機車全程使用（125cc 雙人車、含安全帽）。<br>需出示駕照，油費自理。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`是的，套裝方案含機車全程使用（125cc 雙人車、含安全帽）。<br>需出示駕照，油費自理。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-6-1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-6-1" aria-expanded="true">有電動車可以租嗎？</button>
+          </h2>
+          <div id="c-6-1" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              可以。<br>一般電動車：每日 NT$400～600。<br>高階電動車（如 Gogoro）：每日 NT$700～900。<br>若有特別需求，可於報名時備註。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`可以。<br>一般電動車：每日 NT$400～600。<br>高階電動車（如 Gogoro）：每日 NT$700～900。<br>若有特別需求，可於報名時備註。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-6-2">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-6-2" aria-expanded="true">機車與汽車租金參考表</button>
+          </h2>
+          <div id="c-6-2" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              普通機車 125cc：套裝內含，兩人共乘。<br>汽車五人座：$1,600–$2,200<br>汽車九人座：$3,000–$4,000<br>電動車：$400–$900，依車型而定。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`普通機車 125cc：套裝內含，兩人共乘。<br>汽車五人座：$1,600–$2,200<br>汽車九人座：$3,000–$4,000<br>電動車：$400–$900，依車型而定。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div></div>
+<h3 id="sec7" class="category-title">🚢交通方式 / 報到流程</h3>
+<div class="accordion" id="acc7">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-7-0">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-7-0" aria-expanded="true">要怎麼到澎湖？坐船還是搭飛機？</button>
+          </h2>
+          <div id="c-7-0" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              您可以選擇以下兩種方式：<br>✈️ 搭飛機：由台北、台中、高雄、嘉義、台南出發，約 40～60 分鐘抵達。<br>🛥 搭船：從嘉義布袋港出發至馬公港，航程約 70～80 分鐘。<br><br>👉 套裝方案已含「布袋—澎湖來回船票」，也可加價改搭飛機，報名時提前告知即可。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`您可以選擇以下兩種方式：<br>✈️ 搭飛機：由台北、台中、高雄、嘉義、台南出發，約 40～60 分鐘抵達。<br>🛥 搭船：從嘉義布袋港出發至馬公港，航程約 70～80 分鐘。<br><br>👉 套裝方案已含「布袋—澎湖來回船票」，也可加價改搭飛機，報名時提前告知即可。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-7-1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-7-1" aria-expanded="true">搭船／搭機　報到地點在哪裡？</button>
+          </h2>
+          <div id="c-7-1" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              🚢 船班出發地：嘉義布袋港旅客服務中心。<br>✈️ 飛機出發地：各地機場（台北松山／台中／高雄／嘉義／台南）。<br>⏰ 報到時間：建議於開船或起飛前 60 分鐘報到。<br>🏝 抵達澎湖後：車行人員會前往港口或機場接您前往租車地點（前一日會與您聯繫確認）。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`🚢 船班出發地：嘉義布袋港旅客服務中心。<br>✈️ 飛機出發地：各地機場（台北松山／台中／高雄／嘉義／台南）。<br>⏰ 報到時間：建議於開船或起飛前 60 分鐘報到。<br>🏝 抵達澎湖後：車行人員會前往港口或機場接您前往租車地點（前一日會與您聯繫確認）。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-7-2">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-7-2" aria-expanded="true">機場取票流程</button>
+          </h2>
+          <div id="c-7-2" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              當天請攜帶身份證或健保卡，至華信航空或立榮航空櫃檯辦理登機證。<br>也可使用自助取票機，掃描身份證或健保卡即可領取登機證。<br><br>📍建議提前 30–60 分鐘辦理，以免錯過登機時間。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`當天請攜帶身份證或健保卡，至華信航空或立榮航空櫃檯辦理登機證。<br>也可使用自助取票機，掃描身份證或健保卡即可領取登機證。<br><br>📍建議提前 30–60 分鐘辦理，以免錯過登機時間。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-7-3">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-7-3" aria-expanded="true">搭船取票流程</button>
+          </h2>
+          <div id="c-7-3" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              提醒您請提前 1 小時抵達港口。<br>大人需攜帶身份證件，小朋友請帶健保卡，<br>至船公司櫃台辦理劃位與取票。<br><br>📍 嘉義布袋港旅客服務中心導航：<br>👉 <a href="https://goo.gl/maps/ZvSyuXhYNHaa39Qx9" target="_blank" rel="noopener">https://goo.gl/maps/ZvSyuXhYNHaa39Qx9</a>
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`提醒您請提前 1 小時抵達港口。<br>大人需攜帶身份證件，小朋友請帶健保卡，<br>至船公司櫃台辦理劃位與取票。<br><br>📍 嘉義布袋港旅客服務中心導航：<br>👉 <a href="https://goo.gl/maps/ZvSyuXhYNHaa39Qx9" target="_blank" rel="noopener">https://goo.gl/maps/ZvSyuXhYNHaa39Qx9</a>`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-7-4">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-7-4" aria-expanded="true">布袋開船時間</button>
+          </h2>
+          <div id="c-7-4" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              布袋 → 馬公：10:00（正負 30 分鐘）<br>馬公 → 布袋：16:00（正負 30 分鐘）<br><br>⛴️ 船班時間由船公司安排，無法指定時段，依現有船班為主。<br><br>📎 船票／機票常見問題：<a href="https://www.ph515.tw/2024/01/05/question.html" target="_blank" rel="noopener">https://www.ph515.tw/2024/01/05/question.html</a>
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`布袋 → 馬公：10:00（正負 30 分鐘）<br>馬公 → 布袋：16:00（正負 30 分鐘）<br><br>⛴️ 船班時間由船公司安排，無法指定時段，依現有船班為主。<br><br>📎 船票／機票常見問題：<a href="https://www.ph515.tw/2024/01/05/question.html" target="_blank" rel="noopener">https://www.ph515.tw/2024/01/05/question.html</a>`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-7-5">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-7-5" aria-expanded="true">抵達澎湖後的流程是什麼？</button>
+          </h2>
+          <div id="c-7-5" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              1️⃣ 馬公港或機場抵達。<br>2️⃣ 車行人員前往碼頭或機場接機，載您前往車行取車。<br>3️⃣ 行李由車行協助運送至民宿。<br>4️⃣ 取完車後即可開始自由活動或參加預約行程。<br>5️⃣ 回程當天，請於搭機或搭船前約 1.5 小時歸還機車，車行將提供送機／送船服務，讓您輕鬆返程。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`1️⃣ 馬公港或機場抵達。<br>2️⃣ 車行人員前往碼頭或機場接機，載您前往車行取車。<br>3️⃣ 行李由車行協助運送至民宿。<br>4️⃣ 取完車後即可開始自由活動或參加預約行程。<br>5️⃣ 回程當天，請於搭機或搭船前約 1.5 小時歸還機車，車行將提供送機／送船服務，讓您輕鬆返程。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-7-6">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-7-6" aria-expanded="true">有沒有機場接送或碼頭接送？</button>
+          </h2>
+          <div id="c-7-6" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              租賃汽機車時，車行會安排「機場或碼頭接送服務」，讓您抵達澎湖即可輕鬆取車。
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`租賃汽機車時，車行會安排「機場或碼頭接送服務」，讓您抵達澎湖即可輕鬆取車。`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div></div>
+<h3 id="sec8" class="category-title">行前通知</h3>
+<div class="accordion" id="acc8">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-8-0">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-8-0" aria-expanded="true">不主動提供一次性個人衛生備品</button>
+          </h2>
+          <div id="c-8-0" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              🌿 政府規定提醒<br>自 2025 年 1 月 1 日起，旅宿業者不得主動提供一次性個人衛生備品。<br><br>🛁 有提供：洗髮精、沐浴乳、浴巾<br>🪥 請自備：牙刷、牙膏<br><br>為響應環保，民宿不主動提供一次性備品，感謝您的配合與體諒！
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`🌿 政府規定提醒<br>自 2025 年 1 月 1 日起，旅宿業者不得主動提供一次性個人衛生備品。<br><br>🛁 有提供：洗髮精、沐浴乳、浴巾<br>🪥 請自備：牙刷、牙膏<br><br>為響應環保，民宿不主動提供一次性備品，感謝您的配合與體諒！`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-8-1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-8-1" aria-expanded="true">下船連系司機</button>
+          </h2>
+          <div id="c-8-1" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              下船後請聯絡司機，他們會接送您們前往取車地點。<br><br>行李則會由車行協助直接送達民宿，可能會稍晚一些抵達，建議將當天需要用的物品（如貴重物品、藥品等）先行拿在身上喔！
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`下船後請聯絡司機，他們會接送您們前往取車地點。<br><br>行李則會由車行協助直接送達民宿，可能會稍晚一些抵達，建議將當天需要用的物品（如貴重物品、藥品等）先行拿在身上喔！`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-8-2">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-8-2" aria-expanded="true">入住需知</button>
+          </h2>
+          <div id="c-8-2" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              🏡 入住須知 Check-in Notice<br><br>◎ 入住時間 (Check in)： 下午 3:00 起<br>◎ 退房時間 (Check out)： 上午 10:00 前<br>◎ 為維護旅客隱私，民宿於您入住期間 不會主動進房清潔。如有垃圾，請自行分類後放置於 1 樓大垃圾桶，將有專人每日清理。<br><br>🚭 1. 室內全面禁菸<br>為維護住宿品質與他人健康，室內嚴禁吸菸。若經發現，將收取 NT$3,000 清潔費，敬請配合。<br><br>🌱 2. 環保政策<br>配合政府節能減碳政策，民宿不提供一次性盥洗用品（如牙刷、刮鬍刀、浴帽等）。<br><br>🛁 3. 房內備品<br>每間客房均提供：浴巾、沐浴乳、洗髮乳、漱口杯、吹風機 等基本用品。<br><br>🧺 4. 床單更換<br>續住期間，為響應環保，不主動更換床單、被套與枕套。<br>💧 5. 澎湖水資源珍貴<br>澎湖地區用水主要來自海水淡化，資源十分有限。續住期間 不主動更換浴巾，若有需要請告知服務人員協助。<br><br>🌸 祝您旅途愉快，澎湖玩得開心！ 🌊☀️
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`🏡 入住須知 Check-in Notice<br><br>◎ 入住時間 (Check in)： 下午 3:00 起<br>◎ 退房時間 (Check out)： 上午 10:00 前<br>◎ 為維護旅客隱私，民宿於您入住期間 不會主動進房清潔。如有垃圾，請自行分類後放置於 1 樓大垃圾桶，將有專人每日清理。<br><br>🚭 1. 室內全面禁菸<br>為維護住宿品質與他人健康，室內嚴禁吸菸。若經發現，將收取 NT$3,000 清潔費，敬請配合。<br><br>🌱 2. 環保政策<br>配合政府節能減碳政策，民宿不提供一次性盥洗用品（如牙刷、刮鬍刀、浴帽等）。<br><br>🛁 3. 房內備品<br>每間客房均提供：浴巾、沐浴乳、洗髮乳、漱口杯、吹風機 等基本用品。<br><br>🧺 4. 床單更換<br>續住期間，為響應環保，不主動更換床單、被套與枕套。<br>💧 5. 澎湖水資源珍貴<br>澎湖地區用水主要來自海水淡化，資源十分有限。續住期間 不主動更換浴巾，若有需要請告知服務人員協助。<br><br>🌸 祝您旅途愉快，澎湖玩得開心！ 🌊☀️`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div></div>
+<h3 id="sec9" class="category-title">訂購機票船票資料</h3>
+<div class="accordion" id="acc9">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-9-0">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-9-0" aria-expanded="true">訂購機票船票資料</button>
+          </h2>
+          <div id="c-9-0" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              訂購船票或機票需要：<br><br>請提供所有旅客姓名＋出生年月日＋身分證字號<br><br>提供一位主要連系人 姓名 電話 (主辦人資料)
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`訂購船票或機票需要：<br><br>請提供所有旅客姓名＋出生年月日＋身分證字號<br><br>提供一位主要連系人 姓名 電話 (主辦人資料)`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div></div>
+<h3 id="sec10" class="category-title">免稅卡</h3>
+<div class="accordion" id="acc10">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-10-0">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-10-0" aria-expanded="true">免稅卡製卡與優惠說明</button>
+          </h2>
+          <div id="c-10-0" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              📍 免稅卡製卡說明<br>離境旅客請先前往 「澎湖第3號港一樓服務台」，<br>提供您的 離境班次，即可製作 離境航班卡，<br>以便您購買的免稅商品能順利配送至碼頭或機場。<br><br>網頁內同時附有 名產優惠券，可於多家指定商店使用。<br><br><a href="https://www.ph515.tw/2024/04/02/999pier3.html" target="_blank" rel="noopener">https://www.ph515.tw/2024/04/02/999pier3.html</a>
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`📍 免稅卡製卡說明<br>離境旅客請先前往 「澎湖第3號港一樓服務台」，<br>提供您的 離境班次，即可製作 離境航班卡，<br>以便您購買的免稅商品能順利配送至碼頭或機場。<br><br>網頁內同時附有 名產優惠券，可於多家指定商店使用。<br><br><a href="https://www.ph515.tw/2024/04/02/999pier3.html" target="_blank" rel="noopener">https://www.ph515.tw/2024/04/02/999pier3.html</a>`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="h-10-1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#c-10-1" aria-expanded="true">免稅卡製卡與優惠說明2</button>
+          </h2>
+          <div id="c-10-1" class="accordion-collapse collapse show">
+            <div class="accordion-body answer">
+              💡 小提醒：<br>購買香菸等免稅商品可省下數百元，<br>也可以將此資訊分享給同行友人，一起使用更划算！<br><br>下面為3號港地圖<br><a href="https://maps.app.goo.gl/DBHxN4yKoAggNUjeA" target="_blank" rel="noopener">https://maps.app.goo.gl/DBHxN4yKoAggNUjeA</a>
+              <div class="text-end mt-2">
+                <button class="btn btn-sm btn-outline-primary" onclick="copyHtml(`💡 小提醒：<br>購買香菸等免稅商品可省下數百元，<br>也可以將此資訊分享給同行友人，一起使用更划算！<br><br>下面為3號港地圖<br><a href="https://maps.app.goo.gl/DBHxN4yKoAggNUjeA" target="_blank" rel="noopener">https://maps.app.goo.gl/DBHxN4yKoAggNUjeA</a>`)">📋 複製</button>
+              </div>
+            </div>
+          </div>
+        </div></div>
 
-    <!-- 其餘各分類的內容（略） -->
-    <!-- 若您要完整版本，使用我生成的HTML檔：澎湖旅遊_QA_2025_海洋藍版.html -->
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // 一鍵複製
-    function copyAnswer(btn){
-      const box = btn.closest('.accordion-body');
-      const text = box.innerText.trim();
+    function copyHtml(htmlStr){
+      const tmp = document.createElement('div'); tmp.innerHTML = htmlStr;
+      const text = tmp.innerText.replace(/\n\n+/g,'\n\n');
       navigator.clipboard.writeText(text).then(()=>{
         const tip = document.createElement('div');
         tip.className = 'alert alert-success py-2 position-fixed top-0 start-50 translate-middle-x mt-3 shadow';
-        tip.style.zIndex = 9999;
-        tip.textContent = '已複製到剪貼簿！';
-        document.body.appendChild(tip);
-        setTimeout(()=>tip.remove(), 1000);
+        tip.style.zIndex = 9999; tip.textContent = '已複製到剪貼簿！';
+        document.body.appendChild(tip); setTimeout(()=>tip.remove(), 1100);
       });
     }
-    // 搜尋功能
     document.getElementById('searchInput').addEventListener('input', e => {
       const k = e.target.value.toLowerCase();
-      document.querySelectorAll('.accordion-item').forEach(it=>{
-        it.style.display = it.textContent.toLowerCase().includes(k)?'':'none';
+      document.querySelectorAll('.accordion-item').forEach(it => {
+        it.style.display = it.textContent.toLowerCase().includes(k) ? '' : 'none';
       });
     });
-    document.getElementById('clearBtn').addEventListener('click', ()=>{
+    document.getElementById('clearBtn').addEventListener('click', () => {
       document.getElementById('searchInput').value='';
       document.querySelectorAll('.accordion-item').forEach(it=>it.style.display='');
     });
