@@ -1128,7 +1128,181 @@
     border-radius: 50%;
     top: 50%;
     transform: translateY(-50%);
+    margin: 0 15px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+  }
 
+  .carousel-control-prev:hover,
+  .carousel-control-next:hover {
+    background-color: rgba(40, 156, 217, 0.8);
+    opacity: 1;
+  }
+
+
+  /* 左側按鈕位置 */
+  .carousel-control-prev {
+    left: 0px;
+    top: 250px;
+  }
+
+  /* 右側按鈕位置 */
+  .carousel-control-next {
+    right: 0px;
+    top: 250px;
+  }
+
+
+
+  .modal-body .btn-close {
+    background-color: rgba(168, 128, 190, 0.5);
+    /* 半透明背景 */
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    z-index: 10;
+  }
+
+  .modal-body .btn-close:hover {
+    background-color: rgba(168, 128, 190, 0.8);
+  }
+
+
+
+
+
+
+  /* 加入視窗單位設定 */
+  :root {
+    --vh: 1vh;
+  }
+
+  /* 手機尺寸 (md 以下) */
+  @media (max-width: 767.98px) {
+    .modal-dialog {
+      margin: 0;
+      max-width: 100%;
+      height: 100vh;
+      /* 備用方案 */
+      height: calc(var(--vh, 1vh) * 100);
+      /* 主要方案 */
+    }
+
+    .modal-content {
+      height: 100%;
+      border: 0;
+      border-radius: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .carousel,
+    .carousel-inner,
+    .carousel-item {
+      flex: 1;
+      height: 100%;
+      min-height: 0;
+      /* 重要：允許縮小 */
+    }
+
+    .carousel-item .card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      /* 重要：允許縮小 */
+    }
+
+    .carousel-item .card-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 0;
+      /* 重要：允許縮小 */
+      overflow: hidden;
+      /* 防止內容溢出 */
+    }
+
+    /* 圖片自動縮小 */
+    .carousel-item .card-img-top {
+      max-height: 80vh;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    /* 文字內容自動縮小 */
+    .carousel-item .card-body> :not(iframe) {
+      flex-shrink: 0;
+    }
+
+    /* 地圖容器 - 關鍵修改 */
+    .carousel-item .card-body iframe:last-of-type {
+      flex: 1 1 auto;
+      min-height: 100px;
+      /* 最小高度保底 */
+      height: auto !important;
+    }
+
+    /* 條碼區域自動調整 */
+    .carousel-item svg {
+      max-height: 80px;
+      width: auto !important;
+    }
+
+    /* 調整箭頭位置避免遮擋 */
+    .carousel-control-prev,
+    .carousel-control-next {
+      top: 30% !important;
+      transform: translateY(-50%);
+    }
+  }
+</style>
+
+<script>
+  function setVh() {
+    // 計算實際的視窗高度（解決移動端瀏覽器地址欄問題）
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    // 額外強制重新計算 carousel 高度
+    const carousel = document.querySelector('#carouselExample');
+    if (carousel) {
+      carousel.style.height = 'auto';
+      setTimeout(() => {
+        const modalBody = document.querySelector('.modal-body');
+        if (modalBody) {
+          const computedHeight = window.getComputedStyle(modalBody).height;
+          carousel.style.height = computedHeight;
+        }
+      }, 50);
+    }
+  }
+
+  // 監聽更多事件以確保正確計算
+  window.addEventListener('resize', setVh);
+  window.addEventListener('orientationchange', setVh);
+  window.addEventListener('load', setVh);
+
+  // 當 modal 顯示時也重新計算
+  document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('carouselModal');
+    if (modal) {
+      modal.addEventListener('shown.bs.modal', setVh);
+    }
+  });
+
+  // 初始設定
+  setVh();
+</script>
 
 <script>
 
@@ -1165,7 +1339,6 @@
 
 </script>
 
-</style>
 
 
 
