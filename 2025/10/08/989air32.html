@@ -1088,31 +1088,59 @@
             <!-- 優惠價格 -->
             <h5 class="fw-bold mb-2">💰 優惠價格</h5>
             <div class="table-responsive mb-3">
-                <table class="table table-bordered align-middle">
-                    <thead class="table-light">
-                        <tr>
-                            <th>房型</th>
-                            <th>住宿人數</th>
-                            <th>價格</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>雙人房</td>
-                            <td>2 位</td>
-                            <td>NT$7,600/位</td>
-                        </tr>
-                        <tr>
-                            <td>四人房</td>
-                            <td>4 位</td>
-                            <td>NT$6,600/位</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+  <table class="table table-bordered align-middle text-center">
+    <thead class="table-light">
+      <tr>
+        <th rowspan="2" class="align-middle">房型參考／售價</th>
+        <th colspan="2">高雄出發</th>
+        <th colspan="2">台中出發</th>
+        <th colspan="2">台北出發</th>
+      </tr>
+      <tr>
+        <th>二／三人房</th>
+        <th>四／六人房</th>
+        <th>二／三人房</th>
+        <th>四／六人房</th>
+        <th>二／三人房</th>
+        <th>四／六人房</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>12歲以上</td>
+        <td>11300</td>
+        <td>10800</td>
+        <td>11300</td>
+        <td>10800</td>
+        <td>12300</td>
+        <td>11800</td>
+      </tr>
+      <tr>
+        <td>小孩(2-11歲)</td>
+        <td>10800</td>
+        <td>10300</td>
+        <td>10800</td>
+        <td>10300</td>
+        <td>11800</td>
+        <td>11300</td>
+      </tr>
+      <tr>
+        <td>65歲以上敬老</td>
+        <td>10300</td>
+        <td>9800</td>
+        <td>10300</td>
+        <td>9800</td>
+        <td>11300</td>
+        <td>10800</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
             <ul class="list-unstyled mb-4">
                 <li>🔸 老人定義：65 歲以上。</li>
                 <li>🔸 小孩定義：2～11 歲以下。</li>
+                <li>🔸 小孩不佔床 減1000。</li>
                 <li>🔸 嬰兒費用：每位 NT$1,500（平假日均一價，含保險及行政服務費，不含床位）。</li>
                 <li>🔸 成團人數：需滿 20 人以上方可成團；若人數不足，需酌收差額，請洽客服。</li>
                 <li>🔸 房型差額：
@@ -1310,10 +1338,39 @@
             ],
             likes: "4.8分"
         },
+        // {
+        //     title: "本島行程｜南環秘境小島慢旅",
+        //     location: "南環半日",
+        //     desc: "山水沙灘、嵵裡沙灘、風櫃洞、蛇頭山、青螺濕地、鎖港海岸、澎湖縣水產種苗繁殖場、人文與海岸線交織的悠閒環島之旅。",
+        //     imgs: [
+        //         "/assets/images/posts/phsouth/7.jpg",
+        //         "/assets/images/posts/phsouth/8.jpg",
+        //         "/assets/images/posts/phsouth/10.jpg",
+        //         "/assets/images/posts/phsouth/11.jpg",
+        //         "/assets/images/posts/phsouth/9.jpg"
+        //     ],
+        //     likes: "4.8分"
+        // },
+
+        {
+            title: "本島行程｜馬公市區漫遊半日遊",
+            location: "市區半日",
+            desc: "中央老街、天后宮、觀音亭、篤行十村、澎湖媽祖觀光文化園區、免稅店等，輕鬆散步＋拍照的市區文化散策路線。",
+            imgs: [
+                "/assets/images/posts/magong/1.jpg",
+                "/assets/images/posts/magong/3.jpg",
+                "/assets/images/posts/magong/10.jpg",
+                "/assets/images/posts/magong/5.jpg",
+                "/assets/images/posts/magong/11.jpg",
+                "/assets/images/posts/magong/12.jpg"
+            ],
+            likes: "4.7分"
+        },
+
 
         {
             title: "跨島行程｜七美望安一日遊",
-            location: "七美＋望安",
+            location: "跨島行程",
             desc: "七美望安跳島一日遊＋機車自由行，一次玩遍雙島美景",
             imgs: [
                 "/assets/images/posts/3daytours/7mei/6-1.jpg",
@@ -1330,8 +1387,8 @@
             location: "本島行程",
             desc: "海洋牧場吃到飽＋釣魚溜花枝＋海鮮粥＆現烤牡蠣＋卡拉OK歡唱，一票玩到底",
             imgs: [
-                "/assets/images/posts/3daytours/ocean-farm/2-1.jpg",
                 "/assets/images/posts/3daytours/ocean-farm/2-2.jpg",
+                "/assets/images/posts/3daytours/ocean-farm/2-1.jpg",
                 "/assets/images/posts/3daytours/ocean-farm/2-3.jpg",
                 "/assets/images/posts/3daytours/ocean-farm/2-4.jpg",
                 "/assets/images/posts/3daytours/ocean-farm/2-5.jpg",
@@ -1340,7 +1397,7 @@
             likes: "4.5分"
         }
         // {
-        //     title: "本島三選一｜夜釣小管",
+        //     title: "本島行程｜夜釣小管",
         //     location: "馬公市",
         //     desc: "夜釣小管｜專人教學＋海上夜景＋現煮小管麵&沙西米，感受最道地澎湖漁趣",
         //     imgs: [
@@ -1354,7 +1411,7 @@
         //     likes: "4.3分"
         // },
         // {
-        //     title: "本島三選一｜BBQ 吃到飽",
+        //     title: "本島行程｜BBQ 吃到飽",
         //     location: "馬公市",
         //     desc: "海鮮烤肉吃到飽｜烤具食材全包，一應俱全輕鬆烤！海鮮＋肉品＋蔬菜多樣無限享用",
         //     imgs: [
@@ -1366,9 +1423,55 @@
         //         "/assets/images/posts/3daytours/bbq/3-6.jpg"
         //     ],
         //     likes: "4.5分"
-        // }
+        // },
+        //    {
+        //         title: "本島行程｜南環秘境小島慢旅",
+        //         location: "南環一日",
+        //         desc: "山水沙灘、嵵裡沙灘、風櫃洞、蛇頭山、青螺濕地、鎖港海岸、澎湖縣水產種苗繁殖場、人文與海岸線交織的悠閒環島之旅。",
+        //         imgs: [
+        //             "/assets/images/posts/south/1.jpg",
+        //             "/assets/images/posts/south/7.jpg",
+        //             "/assets/images/posts/south/8.jpg",
+        //             "/assets/images/posts/south/10.jpg",
+        //             "/assets/images/posts/south/11.jpg",
+        //             "/assets/images/posts/south/9.jpg"
+        //         ],
+        //         likes: "4.8分"
+        //     },
+
+        // {
+        //         title: "跨島行程｜東海一日遊",
+        //         location: "澎澎灘",
+        //         desc: "東海巡航＋觀燕鷗＋鳥嶼海鮮午餐＋澎澎灘透明獨木舟、SUP、高空跳水、水上遊樂全包一日遊",
+        //         imgs: [
+        //             "/assets/images/posts/3daytours/dh/4-1.jpg",
+        //             "/assets/images/posts/3daytours/dh/4-2.jpg",
+        //             "/assets/images/posts/3daytours/dh/4-3.jpg",
+        //             "/assets/images/posts/3daytours/dh/4-4.jpg",
+        //             "/assets/images/posts/3daytours/dh/4-5.jpg",
+        //             "/assets/images/posts/3daytours/dh/4-6.jpg"
+        //         ],
+        //         likes: "4.3分"
+        //     },
+        //     {
+        //         title: "跨島行程｜吉貝水上樂翻天",
+        //         location: "吉貝島",
+        //         desc: "吉貝機車自由行＋八合一水上活動無限暢玩：香蕉船、飛艇、海戰車、海陀螺、水上摩托車、動力浮潛一次玩到爽",
+        //         imgs: [
+        //             "/assets/images/posts/3daytours/jibei/5-1.jpg",
+        //             "/assets/images/posts/3daytours/jibei/5-2.jpg",
+        //             "/assets/images/posts/3daytours/jibei/5-3.jpg",
+        //             "/assets/images/posts/3daytours/jibei/5-4.jpg",
+        //             "/assets/images/posts/3daytours/jibei/5-5.jpg",
+        //              "/assets/images/posts/3daytours/jibei/5-6.jpg"
+        //         ],
+        //         likes: "4.3分"
+        //     },
+
 
     ];
+
+
 
     document.addEventListener('DOMContentLoaded', function () {
         const container = document.getElementById('spotsContainer');
