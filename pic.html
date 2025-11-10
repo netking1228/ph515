@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>圖片資料庫｜Gallery</title>
+  <!-- ✅ Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- ✅ PhotoSwipe 5 CDN (Lightbox) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css">
+  <style>
+    :root{
+      --ink:#0b2239; --bg:#f8fafc; --muted:#6b7280; --brand:#0d6efd;
+    }
+    body{background:var(--bg); color:var(--ink)}
+    .gallery-grid{ 
+      display:grid; 
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap:14px; 
+    }
+    .g-card{position:relative; border-radius:16px; overflow:hidden; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,.06)}
+    .g-card img{width:100%; height:220px; object-fit:cover; display:block}
+    .g-badge{position:absolute; left:10px; top:10px; backdrop-filter: blur(6px); background:rgba(0,0,0,.45); color:#fff; padding:4px 8px; border-radius:999px; font-size:.8rem}
+    .g-title{font-weight:600; font-size:.95rem}
+    .g-meta{color:var(--muted); font-size:.85rem}
+    .pswp__caption__center{text-align:left}
+    .tag-chip{cursor:pointer}
+    .tag-chip.active{background:var(--brand); color:#fff}
+    .sticky-top-controls{position:sticky; top:0; z-index:999; background:linear-gradient(#f8fafc 70%, rgba(248,250,252,0)); padding-top:10px}
+  </style>
+  <!--
+  使用說明：
+  1) 把圖片檔放到 /assets/gallery/ 底下（建議原圖 + 縮圖各一）。
+  2) 到最下面的 GALLERY 陣列新增項目：
+     {
+       id: "唯一編號",
+       title: "圖片標題",
+       src: "/assets/gallery/原圖.jpg",  // 原始大圖（lightbox 用）
+       w: 2000, h: 1333,                 // 大圖的像素寬高（加速開啟）
+       thumb: "/assets/gallery/thumbs/原圖-thumb.jpg", // 縮圖路徑
+       tags: ["澎湖","七美","海景"],   // 標籤可多個
+       note: "可加註解或版權 / 來源"
+     }
+  3) 站內搜尋與標籤會自動生效；點縮圖會開啟全螢幕燈箱。
+  4) 可直接用於 Jekyll：將此檔存成 gallery.html 後，
+     在檔頭加上 front matter：
+     ---\nlayout: default\ntitle: 圖片資料庫\npermalink: /gallery/\n---
+  -->
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">圖片資料庫</a>
+      <div class="ms-auto small text-secondary">
+        <span id="countAll">0</span> 張 · <span id="countVisible">0</span> 可見
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-4">
+    <section class="sticky-top-controls pb-2">
+      <div class="row g-2 align-items-center">
+        <div class="col-12 col-md-6">
+          <div class="input-group input-group-lg">
+            <span class="input-group-text bg-white">🔎</span>
+            <input id="q" class="form-control" placeholder="搜尋：標題、標籤、備註…" />
+            <button class="btn btn-outline-secondary" id="btnClear">清除</button>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <select id="selTag" class="form-select form-select-lg">
+            <option value="">全部標籤</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-3">
+          <select id="selSort" class="form-select form-select-lg">
+            <option value="new">最新在前</option>
+            <option value="old">最舊在前</option>
+            <option value="az">標題 A→Z</option>
+            <option value="za">標題 Z→A</option>
+          </select>
+        </div>
+      </div>
+      <div class="mt-2" id="tagChips"></div>
+    </section>
+
+    <section class="mt-3">
+      <div id="grid" class="gallery-grid"></div>
+    </section>
+  </main>
+
+  <!-- ✅ PhotoSwipe 根節點 -->
+  <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"></div>
+
+  <!-- ✅ JS：Bootstrap / PhotoSwipe / 自訂邏輯 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.umd.min.js"></script>
+  <script>
+    // ===== 使用者可編輯：圖片資料 =====
+    const GALLERY = [
+  // ✅ 簡單版：只寫 src、title、tags、note
+  { title: "機票價格", src: "/assets/pic/t1.jpg", tags:["機票"] },
+  { title: "包套分析１", src: "/assets/pic/w1.jpg", tags:["包套"] },
+  { title: "包套分析２", src: "/assets/pic/w2.jpg", tags:["包套"] },
+];
+
+    // ====== DOM 快速選取 ======
+    const $ = (sel, el=document) => el.querySelector(sel);
+    const $$ = (sel, el=document) => Array.from(el.querySelectorAll(sel));
+
+    const grid = $('#grid');
+    const q = $('#q');
+    const selTag = $('#selTag');
+    const selSort = $('#selSort');
+    const btnClear = $('#btnClear');
+    const countAll = $('#countAll');
+    const countVisible = $('#countVisible');
+    const tagChips = $('#tagChips');
+
+    // ====== 狀態 ======
+    let state = { q:"", tag:"", sort:"new" };
+
+    // ====== 初始化 ======
+    function init(){
+      countAll.textContent = GALLERY.length;
+      buildTagFilters();
+      render();
+      bindUI();
+    }
+
+    function buildTagFilters(){
+      const tagSet = new Set();
+      GALLERY.forEach(it => (it.tags||[]).forEach(t => tagSet.add(t)));
+      // 下拉
+      [...tagSet].sort().forEach(t=>{
+        const opt = document.createElement('option');
+        opt.value = t; opt.textContent = t;
+        selTag.appendChild(opt);
+      });
+      // Chips
+      const frag = document.createDocumentFragment();
+      const makeChip = (text, value="")=>{
+        const btn = document.createElement('button');
+        btn.type='button';
+        btn.className='btn btn-sm btn-outline-secondary me-2 mb-2 tag-chip';
+        btn.dataset.value=value; btn.textContent=text;
+        btn.addEventListener('click', ()=>{ selTag.value=value; state.tag=value; render(); highlightChips();});
+        return btn;
+      };
+      frag.appendChild(makeChip('全部', ''));
+      [...tagSet].sort().forEach(t=> frag.appendChild(makeChip(t, t)));
+      tagChips.appendChild(frag);
+      highlightChips();
+    }
+
+    function highlightChips(){
+      $$('.tag-chip').forEach(b=> b.classList.toggle('active', b.dataset.value===state.tag));
+    }
+
+    function bindUI(){
+      q.addEventListener('input', ()=>{ state.q = q.value.trim().toLowerCase(); render(); });
+      selTag.addEventListener('change', ()=>{ state.tag = selTag.value; render(); highlightChips(); });
+      selSort.addEventListener('change', ()=>{ state.sort = selSort.value; render(); });
+      btnClear.addEventListener('click', ()=>{ q.value=''; state.q=''; render(); });
+    }
+
+    function filterList(list){
+      const {q, tag} = state;
+      return list.filter(it=>{
+        const text = `${it.title||''} ${(it.tags||[]).join(' ')} ${it.note||''}`.toLowerCase();
+        const qok = q? text.includes(q): true;
+        const tok = tag? (it.tags||[]).includes(tag): true;
+        return qok && tok;
+      });
+    }
+
+    function sortList(list){
+      const arr = [...list];
+      switch(state.sort){
+        case 'old': arr.reverse(); break; // 基本預設為上方較新
+        case 'az': arr.sort((a,b)=> (a.title||'').localeCompare(b.title||'')); break;
+        case 'za': arr.sort((a,b)=> (b.title||'').localeCompare(a.title||'')); break;
+        case 'new': default: /* 原順序視為新到舊 */ break;
+      }
+      return arr;
+    }
+
+    function render(){
+      const view = sortList(filterList(GALLERY));
+      countVisible.textContent = view.length;
+      grid.innerHTML = '';
+      const frag = document.createDocumentFragment();
+      view.forEach((it, idx)=>{
+        const a = document.createElement('a');
+        a.href = it.src;
+        a.setAttribute('data-pswp-width', it.w || 1600);
+        a.setAttribute('data-pswp-height', it.h || 900);
+        a.setAttribute('data-pswp-src', it.src);
+        a.setAttribute('data-id', it.id || `it-${idx}`);
+        a.className = 'g-card text-decoration-none text-reset';
+
+        const badge = document.createElement('div');
+        badge.className = 'g-badge';
+        badge.textContent = (it.tags||[]).join(' · ');
+
+        const img = document.createElement('img');
+        img.loading='lazy';
+        img.alt = it.title || '';
+        img.src = it.thumb || it.src;
+
+        const cap = document.createElement('div');
+        cap.className = 'p-2';
+        cap.innerHTML = `<div class="g-title">${escapeHtml(it.title||'無標題')}</div>
+                         <div class="g-meta">${escapeHtml(it.note||'')}</div>`;
+
+        a.appendChild(img);
+        a.appendChild(badge);
+        a.appendChild(cap);
+        frag.appendChild(a);
+      });
+      grid.appendChild(frag);
+      buildLightbox();
+    }
+
+    function escapeHtml(str){
+      return str.replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[s]));
+    }
+
+    let pswp;
+    function buildLightbox(){
+      if(pswp){ pswp.destroy(); pswp = null; }
+      const items = $$('#grid a').map(a=>({
+        src: a.getAttribute('data-pswp-src')||a.href,
+        width: +a.getAttribute('data-pswp-width'),
+        height: +a.getAttribute('data-pswp-height'),
+        alt: $('img', a)?.alt || '',
+        thumb: $('img', a)?.src || '',
+        id: a.getAttribute('data-id')||''
+      }));
+      pswp = new PhotoSwipe({
+        dataSource: items,
+        bgOpacity: 0.95,
+        wheelToZoom: true,
+        padding: { top:20, bottom:40, left:20, right:20 },
+        pswpModule: () => import('https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js')
+      });
+      // 以委任方式：點擊任一縮圖開啟相簿並跳到該張
+      grid.addEventListener('click', (e)=>{
+        const a = e.target.closest('a');
+        if(!a) return;
+        e.preventDefault();
+        const idx = $$('#grid a').indexOf(a);
+        if(idx>-1){ pswp.loadAndOpen(idx); }
+      });
+    }
+
+    // 啟動
+    init();
+  </script>
+</body>
+</html>
